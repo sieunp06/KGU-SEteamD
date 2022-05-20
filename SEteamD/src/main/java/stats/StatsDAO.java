@@ -26,7 +26,7 @@ public class StatsDAO {
 		}
 	}
 
-	public double getAvgofCovers() { // Æò±Õ ÀÎ¿ø¼ö
+	public double getAvgofCovers() { // í‰ê·  ì¸ì›ìˆ˜
 		String sql = "SELECT AVG(covers) `avg of covers` FROM reservation";
 		Double avg = 0.0;
 		try {
@@ -41,7 +41,7 @@ public class StatsDAO {
 		return avg;
 	}
 
-	public ArrayList<Table> getTablePreference() { // Å×ÀÌºí ¼±È£µµ
+	public ArrayList<Table> getTablePreference() { // í…Œì´ë¸” ì„ í˜¸ë„
 		String sql = "SELECT `table`.number, COUNT(table_number)\r\n" + "FROM reservation LEFT JOIN `table`\r\n"
 				+ "ON `table`.number = reservation.table_number\r\n" + "GROUP BY `table`.number\r\n"
 				+ "ORDER BY COUNT(table_number) DESC;\r\n";
@@ -66,7 +66,7 @@ public class StatsDAO {
 	public int[] getMonthlyPreference() {
 		String sql = "SELECT MONTH(date), COUNT(date)\r\n" + "FROM reservation\r\n" + "GROUP BY MONTH(date)\r\n"
 				+ "HAVING COUNT(date) > 0\r\n" + "ORDER BY MONTH(date) ASC";
-		int[] month = new int[12]; // index = ¿ù, value = ¹æ¹® È½¼ö
+		int[] month = new int[12]; // index = ì›”, value = ë°©ë¬¸ íšŸìˆ˜
 		int index = 0;
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -83,7 +83,7 @@ public class StatsDAO {
 	public String[][] getHourlyPreference() {
 		String sql = "SELECT TIME(time), COUNT(time)\r\n" + "FROM reservation\r\n" + "GROUP BY TIME(time)\r\n"
 				+ "HAVING COUNT(time) > 0\r\n" + "ORDER BY TIME(time) ASC";
-		String[][] hour = new String[19][2]; // index = ¿ù, value = ¹æ¹® È½¼ö
+		String[][] hour = new String[19][2]; // [i][0] = ì˜ˆì•½ì‹œê°„, [i][1] = ë°©ë¬¸ íšŸìˆ˜
 		int index = 0;
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -98,7 +98,7 @@ public class StatsDAO {
 		return hour;
 	}
 	
-	public ArrayList<Regular> getRegular() { // ´Ü°ñ ¸®½ºÆ®(3È¸ ÀÌ»ó ¹æ¹®ÇÑ ¼Õ´Ô)
+	public ArrayList<Regular> getRegular() { // ë‹¨ê³¨ ë¦¬ìŠ¤íŠ¸(3íšŒ ì´ìƒ ë°©ë¬¸í•œ ì†ë‹˜)
 		String sql = "SELECT user_id, user.name, user.phonenumber, COUNT(date) AS `Number of visits`\r\n"
 				+ "FROM reservation RIGHT JOIN user\r\n" + "ON reservation.user_id = user.id\r\n"
 				+ "GROUP BY user_id\r\n" + "HAVING count(date) >= 3\r\n" + "ORDER BY count(date) DESC;";
