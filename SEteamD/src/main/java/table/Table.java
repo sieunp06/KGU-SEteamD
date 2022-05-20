@@ -2,14 +2,8 @@ package table;
 
 public class Table {
 	private int number;
-	private int seats;
-
-	public Table(int number, int seats) {
-		super();
-		this.number = number;
-		this.seats = seats;
-	}
-
+	private int visits;
+	
 	public int getNumber() {
 		return number;
 	}
@@ -18,11 +12,12 @@ public class Table {
 		this.number = number;
 	}
 
-	public int getSeats() {
-		return seats;
+	public int getVisits() {
+		return visits;
 	}
 
-	public void setSeats(int seats) {
-		this.seats = seats;
+	public void setVisits(int visits) {
+		this.visits = visits;
 	}
+	
 }
