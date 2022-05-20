@@ -65,7 +65,7 @@ public class StatsDAO {
 	
 	public int[] getMonthlyPreference() {
 		String sql = "SELECT MONTH(date), COUNT(date)\r\n" + "FROM reservation\r\n" + "GROUP BY MONTH(date)\r\n"
-				+ "ORDER BY MONTH(date) ASC";
+				+ "HAVING COUNT(date) > 0\r\n" + "ORDER BY MONTH(date) ASC";
 		int[] month = new int[12]; // index = 월, value = 방문 횟수
 		int index = 0;
 		try {
@@ -78,6 +78,24 @@ public class StatsDAO {
 			e.printStackTrace();
 		}
 		return month;
+	}
+	
+	public String[][] getHourlyPreference() {
+		String sql = "SELECT TIME(time), COUNT(time)\r\n" + "FROM reservation\r\n" + "GROUP BY TIME(time)\r\n"
+				+ "HAVING COUNT(time) > 0\r\n" + "ORDER BY TIME(time) ASC";
+		String[][] hour = new String[19][2]; // index = 월, value = 방문 횟수
+		int index = 0;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				hour[index][0] = rs.getString(1);
+				hour[index++][1] = String.valueOf(rs.getInt(2));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return hour;
 	}
 	
 	public ArrayList<Regular> getRegular() { // 단골 리스트(3회 이상 방문한 손님)
