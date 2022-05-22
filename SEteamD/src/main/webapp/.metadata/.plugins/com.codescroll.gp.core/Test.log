@@ -1,0 +1,3 @@
+
+################## STEP 2 #################20220518160838
+ INSERT INTO Module ( idModule, idImportInfo, name, configurationName, isActive, classPath, linkFlag, dependency, language, binaryKind, binaryName, idLinker, idArchive) VALUES  (1,-1,"Default Module",NULL,1,NULL,NULL,NULL,1,0,NULL,68,-1)

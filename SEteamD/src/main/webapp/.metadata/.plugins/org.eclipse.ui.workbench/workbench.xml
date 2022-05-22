@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workbench progressCount="9" version="2.0">
+<workbenchAdvisor/>
+<window height="680" width="1024" x="130" y="0">
+<fastViewData fastViewLocation="1024"/>
+<perspectiveBar>
+<itemSize x="160"/>
+</perspectiveBar>
+<coolbarLayout locked="0">
+<coolItem id="main" itemType="typeToolBarContribution" x="99" y="22"/>
+<coolItem id="com.codescroll.ci.ui.toolbar" itemType="typeToolBarContribution" x="38" y="22"/>
+</coolbarLayout>
+<page focus="true" label="작업공간 - 인스펙션">
+<editors>
+<editorArea activeWorkbook="DefaultEditorWorkbook">
+<info part="DefaultEditorWorkbook">
+<folder appearance="1" expanded="2">
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+</editorArea>
+</editors>
+<views>
+<view id="com.codescroll.gp.ui.views.TestResultView" partName="테스트 네비게이터">
+<viewState CommonNavigator.LINKING_ENABLED="0"/>
+</view>
+<view id="com.codescroll.ci.ui.views.InspectionSummaryView" partName="위배 요약">
+<viewState/>
+</view>
+<view id="com.codescroll.ci.ui.views.ViolationView" partName="위배 상세">
+<viewState/>
+</view>
+<view id="com.codescroll.ci.ui.views.SyntaxErrorView" partName="컴파일 오류">
+<viewState/>
+</view>
+</views>
+<perspectives activePart="com.codescroll.ci.ui.views.ViolationView" activePerspective="com.codescroll.ci.ui.perspectives.InspectionPerspective">
+<perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
+<descriptor class="com.codescroll.ci.ui.perspectives.InspectionPerspective" id="com.codescroll.ci.ui.perspectives.InspectionPerspective" label="인스펙션"/>
+<alwaysOnActionSet id="com.codescroll.gp.pa.search.searchActionSet"/>
+<show_view_action id="com.codescroll.ci.ui.views.InspectionSummaryView"/>
+<show_view_action id="com.codescroll.ci.ui.views.ViolationView"/>
+<show_view_action id="com.codescroll.ci.ui.views.SyntaxErrorView"/>
+<show_view_action id="com.codescroll.ci.ui.views.RuleDescriptionView"/>
+<new_wizard_action id="com.codescroll.gp.prj.imports.wizards.EmptyCProjectWizard"/>
+<new_wizard_action id="com.codescroll.gp.prj.imports.wizards.ImportCProjectWizard"/>
+<new_wizard_action id="com.codescroll.gp.prj.imports.wizards.ImportBuildCommandWizard"/>
+<new_wizard_action id="com.codescroll.gp.prj.imports.wizards.ImportVisualStudioProjectWizard"/>
+<new_wizard_action id="com.codescroll.gp.prj.imports.wizards.ImportCSProjectWizard"/>
+<hide_toolbar_item_id id="org.eclipse.ui.edit.text.toggleShowSelectedElementOnly"/>
+<view id="com.codescroll.ci.ui.views.InspectionSummaryView"/>
+<view id="com.codescroll.ci.ui.views.ViolationView"/>
+<view id="com.codescroll.ci.ui.views.SyntaxErrorView"/>
+<view id="com.codescroll.gp.ui.views.TestResultView"/>
+<fastViewBars/>
+<layout>
+<mainWindow>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@13f5a2f">
+<folder activePageID="com.codescroll.gp.ui.views.TestResultView" appearance="2" expanded="2">
+<page content="com.codescroll.gp.ui.views.TestResultView" label="테스트 네비게이터"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
+</folder>
+</info>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@105562b" ratio="0.75" ratioLeft="750" ratioRight="250" relationship="2" relative="org.eclipse.ui.internal.ViewStack@13f5a2f">
+<folder appearance="2" expanded="2">
+<page content="org.eclipse.help.ui.HelpView" label="LabelNotFound"/>
+<page content="org.eclipse.ui.internal.introview" label="LabelNotFound"/>
+<page content="org.eclipse.ui.cheatsheets.views.CheatSheetView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+<info folder="true" part="placeholder" ratio="0.5591398" ratioLeft="312" ratioRight="246" relationship="4" relative="org.eclipse.ui.internal.ViewStack@13f5a2f">
+<folder activePageID="com.codescroll.ci.ui.views.ViolationView" appearance="2" expanded="2">
+<page content="com.codescroll.ci.ui.views.InspectionSummaryView" label="위배 요약"/>
+<page content="com.codescroll.ci.ui.views.ViolationView" label="위배 상세"/>
+<page content="com.codescroll.ci.ui.views.SyntaxErrorView" label="컴파일 오류"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+<part id="1"/>
+<part id="2"/>
+</presentation>
+</folder>
+</info>
+<info part="org.eclipse.ui.editorss" ratio="0.22" ratioLeft="220" ratioRight="780" relationship="2" relative="org.eclipse.ui.internal.ViewStack@13f5a2f"/>
+<info folder="true" part="org.eclipse.ui.internal.ViewStack@39f16f" ratio="0.5692308" ratioLeft="444" ratioRight="336" relationship="2" relative="org.eclipse.ui.editorss">
+<folder appearance="2" expanded="2">
+<page content="com.codescroll.ci.ui.views.RuleDescriptionView" label="LabelNotFound"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+</folder>
+</info>
+</mainWindow>
+</layout>
+</perspective>
+</perspectives>
+<workingSets/>
+<navigationHistory/>
+<input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
+</page>
+<workbenchWindowAdvisor/>
+<actionBarAdvisor/>
+<trimLayout>
+<trimArea IMemento.internal.id="128">
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.WorkbenchWindow.topBar"/>
+</trimArea>
+<trimArea IMemento.internal.id="1024">
+<trimItem IMemento.internal.id="org.eclise.ui.internal.FastViewBar"/>
+<trimItem IMemento.internal.id="org.eclipse.jface.action.StatusLineManager"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.HeapStatus"/>
+<trimItem IMemento.internal.id="org.eclipse.ui.internal.progress.ProgressRegion"/>
+</trimArea>
+</trimLayout>
+</window>
+<mruList/>
+</workbench>

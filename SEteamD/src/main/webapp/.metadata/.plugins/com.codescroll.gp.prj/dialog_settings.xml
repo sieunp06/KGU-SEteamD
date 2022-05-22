@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="SourceFileSelectWizardPage">
+		<item value="C:\슈어_소프트" key="TOP_DIRECTORY"/>
+	</section>
+	<section name="ProjectGeneralInfoWizardPage">
+		<item value="C:\소공" key="LOCATION"/>
+	</section>
+</section>

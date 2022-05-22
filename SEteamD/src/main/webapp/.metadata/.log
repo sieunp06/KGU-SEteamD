@@ -1,0 +1,167 @@
+!SESSION 2022-05-18 16:07:01.512 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_43
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=ko_KR
+Framework arguments:  [CI] -ISDEV N -CI_SPECIFIC_INFO reserved -g default
+Command-line arguments:  -os win32 -ws win32 -arch x86 [CI] -ISDEV N -CI_SPECIFIC_INFO reserved -data @noDefault -g default
+
+!ENTRY com.codescroll.gp.rcp.common 1 0 2022-05-18 16:07:02.329
+!MESSAGE --- ARGUMENT LIST
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:07:56.346
+!MESSAGE Platform installed location : C:\슈어_소프트
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:07:56.401
+!MESSAGE GLOBAL_LOCATION=C:\Users\dpfxl\AppData\Roaming
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:07:58.036
+!MESSAGE #Installed GP Feature: com.codescroll.gp.cli.feature
+
+!ENTRY org.eclipse.ui 4 4 2022-05-18 16:07:58.458
+!MESSAGE Invalid preference page path: 자동 갱신
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:04.913
+!MESSAGE com.codescroll.gp.core early start up
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:04.923
+!MESSAGE Register ResourceChangeListener to current workspace
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:04.926
+!MESSAGE Register WorkspaceSelectionListener to current workspace
+
+!ENTRY com.codescroll.gp.prj 1 0 2022-05-18 16:08:37.162
+!MESSAGE EmptyProjectWizard.performFinish()
+
+!ENTRY com.codescroll.gp.prj 1 0 2022-05-18 16:08:37.358
+!MESSAGE RCPProjectCreateRunnable.run()
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:37.383
+!MESSAGE IDEResourceCreator.createNewProject()
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:37.533
+!MESSAGE ProjectManager.create()
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:37.557
+!MESSAGE AbCSProject()
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:38.527
+!MESSAGE AbCSProject.create()
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:38.684
+!MESSAGE loadSourceFile&syncIFile: 12 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:38.697
+!MESSAGE loadTranslationUnit: 12 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:38.718
+!MESSAGE #loadInitialData: 85 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:38.720
+!MESSAGE ProjectDBSQLHelper.update()
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:38.943
+!MESSAGE AbCSProject()
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:39.000
+!MESSAGE loadSourceFile&syncIFile: 10 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:39.015
+!MESSAGE loadTranslationUnit: 13 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:39.045
+!MESSAGE #loadInitialData: 99 millis
+
+!ENTRY com.codescroll.ci 1 0 2022-05-18 16:08:39.090
+!MESSAGE CI Rule DB Copied : Test
+
+!ENTRY com.codescroll.ci 1 0 2022-05-18 16:08:39.589
+!MESSAGE CI cipa.ini Copied
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:39.888
+!MESSAGE createProductModel: 841 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:39.893
+!MESSAGE #Project: Test, open: 946 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:39.894
+!MESSAGE IDEResourceCreator.createNewResources()
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:39.923
+!MESSAGE loadFunctionInfo: 22 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:40.075
+!MESSAGE Used Memory(Test): 20159KB
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:40.077
+!MESSAGE 함수 정보를 읽고 있습니다. (Test): 184 millis
+
+!ENTRY com.codescroll.gp.core 2 0 2022-05-18 16:08:40.143
+!MESSAGE 백업 정보 파일(C:\Users\dpfxl\AppData\Roaming\CodeScroll\1.1\SourceBackup\source_backup.info)을 찾을 수 없습니다.
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:40.152
+!MESSAGE ExportUtils.exists(): 51 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:40.174
+!MESSAGE ExportUtils.exists(): 0 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:40.464
+!MESSAGE ExportUtils.exists(): 0 millis
+
+!ENTRY org.eclipse.cdt.core 1 0 2022-05-18 16:08:40.712
+!MESSAGE Indexed 'Test' (0 sources, 13 headers) in 0.32 sec: 0 declarations; 0 references; 13 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY com.codescroll.gp.core 2 0 2022-05-18 16:08:45.594
+!MESSAGE 백업 정보 파일(C:\Users\dpfxl\AppData\Roaming\CodeScroll\1.1\AutoFixBackup\source_backup.info)을 찾을 수 없습니다.
+
+!ENTRY com.codescroll.ci 1 0 2022-05-18 16:08:49.550
+!MESSAGE Inspection execute...
+
+!ENTRY com.codescroll.ci 1 0 2022-05-18 16:08:49.554
+!MESSAGE iProject : Test
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:49.566
+!MESSAGE ExportUtils.exists(): 0 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:49.605
+!MESSAGE checker new_check_release: 10 millis
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:08:49.609
+!MESSAGE checkDirty: 46 millis
+!SESSION 2022-05-18 16:13:06.463 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.6.0_43
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=ko_KR
+Framework arguments:  [CI] -ISDEV N -CI_SPECIFIC_INFO reserved -g default
+Command-line arguments:  -os win32 -ws win32 -arch x86 [CI] -ISDEV N -CI_SPECIFIC_INFO reserved -data @noDefault -g default
+
+!ENTRY com.codescroll.gp.rcp.common 1 0 2022-05-18 16:13:08.616
+!MESSAGE --- ARGUMENT LIST
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:13:19.960
+!MESSAGE Platform installed location : C:\슈어_소프트
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:13:20.053
+!MESSAGE GLOBAL_LOCATION=C:\Users\dpfxl\AppData\Roaming
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-05-18 16:13:21.151
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:13:21.414
+!MESSAGE #Installed GP Feature: com.codescroll.gp.cli.feature
+
+!ENTRY org.eclipse.ui 4 4 2022-05-18 16:13:21.856
+!MESSAGE Invalid preference page path: 자동 갱신
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:13:27.668
+!MESSAGE com.codescroll.gp.core early start up
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:13:27.679
+!MESSAGE Register ResourceChangeListener to current workspace
+
+!ENTRY com.codescroll.gp.core 1 0 2022-05-18 16:13:27.684
+!MESSAGE Register WorkspaceSelectionListener to current workspace
+
+!ENTRY org.eclipse.osgi 2 1 2022-05-18 16:43:06.920
+!MESSAGE NLS unused message: AutoFixFail in: com.codescroll.ci.autofix.internal.messages
