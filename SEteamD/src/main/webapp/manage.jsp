@@ -137,10 +137,10 @@ table th:last-child,table td:last-child {
            	Class.forName("com.mysql.cj.jdbc.Driver");
            	String dbURL = "jdbc:mysql://localhost:3306/booksys";
            	String dbID = "root";
-		   	String dbPW = "1234";
+		   	String dbPW = "software!";
 		   	
 		   	Connection conn = DriverManager.getConnection(dbURL, dbID, dbPW);
-		   	String sql = "select * from reservation";
+		   	String sql = "SELECT * FROM reservation WHERE date = date_format(NOW(),'%Y%m%d')";
 		   	PreparedStatement pstmt = conn.prepareStatement(sql);
 		   	ResultSet rs = pstmt.executeQuery(sql);	
 
