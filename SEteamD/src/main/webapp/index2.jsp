@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="user.UserDAO"%>
+<%@ page import="java.io.PrintWriter"%>
+<jsp:useBean id="user" class="user.User" scope="page" />
+<jsp:setProperty name="user" property="id"/>
+<jsp:setProperty name="user" property="admin" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,25 +52,8 @@
 				<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 					<li class="nav-item"><a class="nav-link" href="index.jsp">Services</a></li>
 					<li class="nav-item"><a class="nav-link" href="#services">About</a></li>
-
-					<%
-					if (id == null) {
-					%>
-
-					<!--                         <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li> -->
-					<li class="nav-item"><a class="nav-link" href="login.jsp">Log-in</a></li>
-
-					<%
-					} else {
-					%>
-
-					<li class="nav-item"><a class="nav-link"
-						href="reservation.jsp">Reservation</a></li>
-					<li class="nav-item"><a class="nav-link" href="logoutAction.jsp">logout</a></li>
-
-					<%
-					}
-					%>
+					<li class="nav-item"><a class="nav-link" href="manage.jsp">Manage</a></li>
+					<li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
 
 				</ul>
 			</div>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8" />
@@ -117,17 +117,17 @@ table th:last-child,table td:last-child {
                     </div>
                 </nav>
         
-           <h4 class="tt">예약 관리</h4>
+           <h4 class="tt">���� 愿�由�</h4>
                 <table class="tg" width="1200" height="50">
                  
                 <thead>
                   <tr>
-                    <td class="tg-uqo3" colspan="1">번호</td>
-                    <td class="tg-uqo3" colspan="2">이름</td>
-                    <td class="tg-uqo3" colspan="2">전화번호</td>
-                    <td class="tg-uqo3" colspan="2">날짜</td>
-                    <td class="tg-uqo3" colspan="2">인원</td>
-                    <td class="tg-uqo3" colspan="2">테이블</td>
+                    <td class="tg-uqo3" colspan="1">踰���</td>
+                    <td class="tg-uqo3" colspan="2">�대�</td>
+                    <td class="tg-uqo3" colspan="2">����踰���</td>
+                    <td class="tg-uqo3" colspan="2">��吏�</td>
+                    <td class="tg-uqo3" colspan="2">�몄��</td>
+                    <td class="tg-uqo3" colspan="2">���대�</td>
                   </tr>
                 </thead>
         
@@ -181,7 +181,7 @@ table th:last-child,table td:last-child {
                         <div>
                         </div>
                         <!-- Submit Button-->
-                        <div class="btn"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit" onClick="buttonClick()" >확인</button></div>
+                        <div class="btn"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="submit" onClick="buttonClick()" >����</button></div>
                           
                         </div>
                       </div>

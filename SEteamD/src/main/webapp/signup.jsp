@@ -64,10 +64,6 @@
                 filter: brightness(70%);
                 color: white ;
             }
-            #sign:hover {
-                filter: brightness(70%);
-                color: white ;
-            }
 
             
         </style>

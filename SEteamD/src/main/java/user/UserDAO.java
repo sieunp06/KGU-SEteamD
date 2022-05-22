@@ -31,12 +31,12 @@ public class UserDAO {
 
 			if (rs.next()) 
 				if (rs.getInt(1) == 1) 
-					return 1; // 로그인 성공
-			return -1; // 아이디 없음
+					return 1; // 濡쒓렇�씤 �꽦怨�
+			return -1; // �븘�씠�뵒 �뾾�쓬
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -2; // 데이터베이스 오류
+		return -2; // �뜲�씠�꽣踰좎씠�뒪 �삤瑜�
 	}
 
 	public int insertUser(User user) {
@@ -49,7 +49,7 @@ public class UserDAO {
 			pstmt.setString(2, user.getPw());
 			pstmt.setString(3, user.getName());
 			pstmt.setString(4, user.getPhoneNumber());
-			return pstmt.executeUpdate(); // 정상: 삽입된 데이터의 개수 > 0
+			return pstmt.executeUpdate(); // �젙�긽: �궫�엯�맂 �뜲�씠�꽣�쓽 媛쒖닔 > 0
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -66,16 +66,16 @@ public class UserDAO {
 
 			if (rs.next()) {
 				if (rs.getString(1).equals(pw)) {
-					return 1; // 로그인 성공
+					return 1; // 濡쒓렇�씤 �꽦怨�
 				} else {
-					return 0; // 비밀번호 불일치
+					return 0; // 鍮꾨�踰덊샇 遺덉씪移�
 				}
 			}
-			return -1; // 아이디 없음
+			return -1; // �븘�씠�뵒 �뾾�쓬
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -2; // 데이터베이스 오류
+		return -2; // �뜲�씠�꽣踰좎씠�뒪 �삤瑜�
 	}
 
 	//	private ResultSet rs = null;
@@ -108,7 +108,7 @@ public class UserDAO {
 //			Connection conn = DatabaseUtill.getConnection();
 //			PreparedStatement pstmt = conn.prepareStatement(sql);
 //			pstmt.setString(1, id);
-//			return pstmt.executeUpdate(); // 정상: 삽입된 데이터의 개수 = 0
+//			return pstmt.executeUpdate(); // �젙�긽: �궫�엯�맂 �뜲�씠�꽣�쓽 媛쒖닔 = 0
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}

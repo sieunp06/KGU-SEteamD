@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -199,24 +199,24 @@ input[type="radio"]:checked:after {
 		<div class="main">
 			<h2 class="logo">Reservation</h2>
 			<div class="container">
-				<h6>ΐΜΈ§</h6>
-				<input type="text" placeholder="ΌΊΈν" id="name" class="reser"
+				<h6>μ΄λ¦„</h6>
+				<input type="text" placeholder="μ„±λª…" id="name" class="reser"
 					size="37"><br>
-				<h6>ΐόΘ­ΉψΘ£</h6>
-				<input type="tel" placeholder="ΐόΘ­ΉψΘ£" id="phoneN" class="reser"
+				<h6>μ „ν™”λ²νΈ</h6>
+				<input type="tel" placeholder="μ „ν™”λ²νΈ" id="phoneN" class="reser"
 					size="37"><br>
-				<h6>ΏΉΎΰ ³―Β¥</h6>
+				<h6>μμ•½ λ‚ μ§</h6>
 				<input class="reser" id="date" type="date" placeholder="Date *"
 					data-sb-validations="required,email" />
 				<div class="container1">
-					<h6>ΏΉΎΰ ΐΞΏψ</h6>
+					<h6>μμ•½ μΈμ›</h6>
 					<select name="time_choose">
-						<option value="none">Ό±ΕΓ</option>
-						<option value="2Έν">2Έν</option>
-						<option value="3Έν">3Έν</option>
-						<option value="4Έν">4Έν</option>
-						<option value="5Έν">5Έν</option>
-						<option value="6Έν">6Έν</option>
+						<option value="none">μ„ νƒ</option>
+						<option value="2λª…">2λª…</option>
+						<option value="3λª…">3λª…</option>
+						<option value="4λª…">4λª…</option>
+						<option value="5λª…">5λª…</option>
+						<option value="6λª…">6λª…</option>
 					</select>
 				</div>
 
@@ -227,7 +227,7 @@ input[type="radio"]:checked:after {
 		<div class="main1">
 			<h2 class="logo">&nbsp;</h2>
 			<div class="container">
-				<h6>½Γ°£Ό±ΕΓ</h6>
+				<h6>μ‹κ°„μ„ νƒ</h6>
 
 				<div class="card">
 					<input type="radio" name="re_time" id="card1"> <label
@@ -322,7 +322,7 @@ input[type="radio"]:checked:after {
 
 
 				<button class="btn-reser" id="submitButton" type="button"
-					onclick="buttonClick()">΄Ωΐ½</button>
+					onclick="buttonClick()">λ‹¤μ</button>
 			</div>
 	</section>
 </body>
