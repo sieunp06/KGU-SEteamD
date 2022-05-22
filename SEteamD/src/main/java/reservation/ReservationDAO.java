@@ -11,9 +11,7 @@ public class ReservationDAO {
 	private Connection conn;
 	private PreparedStatement pstmt;
 	private ResultSet rs;
-	
-	private ArrayList<Reservation> listOfReservations = new ArrayList<Reservation>();
-	
+
 	public ReservationDAO() {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/booksys";
