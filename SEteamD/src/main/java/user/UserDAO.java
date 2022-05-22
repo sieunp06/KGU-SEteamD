@@ -22,7 +22,63 @@ public class UserDAO {
 		}
 	}
 
-//	private ResultSet rs = null;
+	public int adminCheck(String id) {
+		String SQL = "SELECT admin FROM USER WHERE id = ?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) 
+				if (rs.getInt(1) == 1) 
+					return 1; // ë¡œê·¸ì¸ ì„±ê³µ
+			return -1; // ì•„ì´ë”” ì—†ìŒ
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -2; // ë°ì´í„°ë² ì´ìŠ¤ ì˜¤ë¥˜
+	}
+
+	public int insertUser(User user) {
+		String sql = "INSERT INTO user VALUES (?,?,?,?)";
+		try {
+//			Connection conn = DatabaseUtill.getConnection();
+
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user.getId());
+			pstmt.setString(2, user.getPw());
+			pstmt.setString(3, user.getName());
+			pstmt.setString(4, user.getPhoneNumber());
+			return pstmt.executeUpdate(); // ì •ìƒ: ì‚½ì…ëœ ë°ì´í„°ì˜ ê°œìˆ˜ > 0
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+	}
+
+	public int login(String id, String pw) {
+
+		String SQL = "SELECT pw FROM USER WHERE id = ?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				if (rs.getString(1).equals(pw)) {
+					return 1; // ë¡œê·¸ì¸ ì„±ê³µ
+				} else {
+					return 0; // ë¹„ë°€ë²ˆí˜¸ ë¶ˆì¼ì¹˜
+				}
+			}
+			return -1; // ì•„ì´ë”” ì—†ìŒ
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -2; // ë°ì´í„°ë² ì´ìŠ¤ ì˜¤ë¥˜
+	}
+
+	//	private ResultSet rs = null;
 //
 //	public User selectUser(String id) {
 //		String sql = "SELECT * FROM user WHERE id = ?";
@@ -44,22 +100,7 @@ public class UserDAO {
 //		return user;
 //	}
 //
-	public int insertUser(User user) {
-		String sql = "INSERT INTO user VALUES (?,?,?,?)";
-		try {
-//			Connection conn = DatabaseUtill.getConnection();
 
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, user.getId());
-			pstmt.setString(2, user.getPw());
-			pstmt.setString(3, user.getName());
-			pstmt.setString(4, user.getPhoneNumber());
-			return pstmt.executeUpdate(); // Á¤»ó: »ğÀÔµÈ µ¥ÀÌÅÍÀÇ °³¼ö > 0
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return -1;
-	}
 //
 //	public int deleteUser(String id) {
 //		String sql = "DELETE FROM user WHERE id = ?";
@@ -67,7 +108,7 @@ public class UserDAO {
 //			Connection conn = DatabaseUtill.getConnection();
 //			PreparedStatement pstmt = conn.prepareStatement(sql);
 //			pstmt.setString(1, id);
-//			return pstmt.executeUpdate(); // Á¤»ó: »ğÀÔµÈ µ¥ÀÌÅÍÀÇ °³¼ö = 0
+//			return pstmt.executeUpdate(); // ì •ìƒ: ì‚½ì…ëœ ë°ì´í„°ì˜ ê°œìˆ˜ = 0
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
@@ -78,44 +119,4 @@ public class UserDAO {
 //		deleteUser(user.getId());
 //		insertUser(user);
 //	}
-
-	public int login(String id, String pw) {
-
-		String SQL = "SELECT pw FROM USER WHERE id = ?";
-		try {
-			pstmt = conn.prepareStatement(SQL);
-			pstmt.setString(1, id);
-			rs = pstmt.executeQuery();
-
-			if (rs.next()) {
-				if (rs.getString(1).equals(pw)) {
-					return 1; // ·Î±×ÀÎ ¼º°ø
-				} else {
-					return 0; // ºñ¹Ğ¹øÈ£ ºÒÀÏÄ¡
-				}
-			}
-			return -1; // ¾ÆÀÌµğ ¾øÀ½
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return -2; // µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
-	}
-
-//	public int join(User user) {
-//		String SQL = "INSERT INTO USER VALUES (?,?,?,?)";
-//
-//		try {
-//			pstmt = conn.prepareStatement(SQL);
-//			pstmt.setString(1, user.getId());
-//			pstmt.setString(2, user.getPw());
-//			pstmt.setString(3, user.getName());
-//			pstmt.setString(4, user.getPhoneNumber());
-//			return pstmt.executeUpdate();
-//			
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return -1; // µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
-//	}
-
 }
