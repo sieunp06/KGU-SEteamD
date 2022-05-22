@@ -59,7 +59,10 @@
                 background-color: rgb(209, 233, 252);
                 border-color: transparent;
                 color: white;
-             
+            }
+            #sign:hover {
+                filter: brightness(70%);
+                color: white ;
             }
 
             
@@ -94,11 +97,9 @@
                     	<form method="post" action="signupAction.jsp">
                     		<input type="text" placeholder="ID" id="id" name="id" class="account" size="37"><br>
 	                        <input type="password" placeholder="Password" id="pw" name="pw" class="account" size="37"><br>
+	                        <input type="password" placeholder="Password 확인" id="pwCheck" name="pw check" class="account" size="37"><br>
 	                        <input type="text" placeholder="이름" id="name" name="name" class="account" size="37"><br>
 	                        <input type="text" placeholder="Phone Number" id="phoneNumber" name="phoneNumber" class="account" size="37"><br><br>
-<!-- 	                        <button type="submit" id="sign" class="account"><a href="signup.jsp"></a> sign-up</button> -->
-<!-- 	                        <p id="alert" class="account"> </p> -->
-<!-- 							<input type="submit" id="sign" class="btn btn-primary form-control" value="회원가입"> -->
                     		<input type="submit" id="sign" class="account" value="signup">
                     	</form>
             

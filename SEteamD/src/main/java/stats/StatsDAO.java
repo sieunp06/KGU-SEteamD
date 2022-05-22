@@ -18,7 +18,7 @@ public class StatsDAO {
 		try {
 			String dbURL = "jdbc:mysql://localhost:3306/booksys";
 			String dbID = "root";
-			String dbPW = "software!";
+			String dbPW = "1234";
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(dbURL, dbID, dbPW);
 		} catch (Exception e) {

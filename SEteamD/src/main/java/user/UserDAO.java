@@ -28,7 +28,6 @@ public class UserDAO {
 //		String sql = "SELECT * FROM user WHERE id = ?";
 //		User user = null;
 //		try {
-//			Connection conn = DatabaseUtill.getConnection();
 //			PreparedStatement pstmt = conn.prepareStatement(sql);
 //			pstmt.setString(1, id);
 //			rs = pstmt.executeQuery();

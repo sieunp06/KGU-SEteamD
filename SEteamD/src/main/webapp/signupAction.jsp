@@ -19,7 +19,9 @@
 <body>
 	<%
 		String id = null;
-	
+		String pw = request.getParameter("pw");
+		String pwCheck = request.getParameter("pw check");
+
 		if (session.getAttribute("id") != null) {
 			id = (String)session.getAttribute("id");
 		}
@@ -35,10 +37,19 @@
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			script.println("alert('입력이 안된 사항이 있습니다.')");
-			
 			script.println("history.back()");
 			script.println("</script>");
-		} else {
+		}
+		
+		else if (!pw.equals(pwCheck)) {
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('비밀번호를 다시 확인해주세요.')");
+			script.println("history.back()");
+			script.println("</script>");
+		}
+		
+		else {
 			UserDAO userDAO = new UserDAO();
 			int result = userDAO.insertUser(user);
 
