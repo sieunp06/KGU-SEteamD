@@ -1,4 +1,7 @@
 # <center>SEED</center>
+
+![image](SEteamD/index_screen.png)
+
 ### ✔ 개요
 경기대학교 소프트웨어 공학 team D<br>
 레스토랑 예약 시스템 제작<br>
