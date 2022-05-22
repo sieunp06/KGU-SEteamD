@@ -59,7 +59,10 @@
                 background-color: rgb(209, 233, 252);
                 border-color: transparent;
                 color: white;
-             
+            }
+            #sign:hover {
+                filter: brightness(70%);
+                color: white ;
             }
             #sign:hover {
                 filter: brightness(70%);

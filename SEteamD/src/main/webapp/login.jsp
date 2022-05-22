@@ -74,13 +74,13 @@
         </style>
     </head>
     <body id="page-top">
+    
     	<%
 		String id = null;
 		if (session.getAttribute("id") != null) {
 			id = (String) session.getAttribute("id");
 		}
 		%>
-    
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
@@ -93,17 +93,19 @@
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.jsp">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">About</a></li>
+                        
                         <%
     					if (id == null) {
                         %>
+<!--                         <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li> -->
+                        <li class="nav-item"><a class="nav-link" href="login.jsp">Log-in</a></li>
                         
-                        <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
                         <%
 						} else {
 						%>
-                        
-                        <li class="nav-item"><a class="nav-link" href="login.jsp">Log-in</a></li>
-                    	<%
+						<li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
+						<li class="nav-item"><a class="nav-link" href="login.jsp">Log-out</a></li>
+						<%
 						}
 						%>
                     </ul>
@@ -123,6 +125,8 @@
 	                        <button id="login" class="account" data-sb-validations="required">login</button>
 	                        <div class="invalid-feedback" data-sb-feedback="phone:required">ID or Password is incorrect.</div>
 	                        <p id="alert" class="account"> </p>
+<!-- 	                        <button id="sign" class="account"><a href="signup.jsp">Sign-up</a> </button> -->
+<!-- 	                        <p id="alert" class="account"> </p> -->
 	                    </form>
 	                    <button id="sign" class="account"><a href="signup.jsp">Sign-up</a> </button>
 	                    <p id="alert" class="account"> </p>

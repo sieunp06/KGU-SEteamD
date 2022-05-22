@@ -6,8 +6,6 @@
 <jsp:useBean id="user" class="user.User" scope="page"/>
 <jsp:setProperty name="user" property="id"/>
 <jsp:setProperty name="user" property="pw"/>
-<jsp:setProperty name="user" property="name" />
-<jsp:setProperty name="user" property="phoneNumber" />
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +17,6 @@
 <body>
 	<%
 		String id = null;
-		String pw = request.getParameter("pw");
-		String pwCheck = request.getParameter("pw check");
 	
 		if (session.getAttribute("id") != null) {
 			id = (String)session.getAttribute("id");
@@ -33,39 +29,34 @@
 			script.println("</script>");
 		}
 	
-		if (user.getId() == null || user.getPw() == null || user.getName() == null || user.getPhoneNumber() == null) {
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('입력이 안된 사항이 있습니다.')");
-			
-			script.println("history.back()");
-			script.println("</script>");
-		}	
-		else if (!pw.equals(pwCheck)) {
-			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("alert('비밀번호를 다시 확인해주세요.')");
-			script.println("history.back()");
-			script.println("</script>");
-		}
+		UserDAO userDAO = new UserDAO();
+		int result = userDAO.login(user.getId(), user.getPw());
 		
-		else {
-			UserDAO userDAO = new UserDAO();
-			int result = userDAO.insertUser(user);
-
-			if (result == -1) {
-				PrintWriter script = response.getWriter();
-				script.println("<script>");
-				script.println("alert('이미 존재하는 아이디입니다.')");
-				script.println("history.back()");
-				script.println("</script>");
-			} else {
-				session.setAttribute("id", user.getId());
-				PrintWriter script = response.getWriter();
-				script.println("<script>");
-				script.println("location.href = 'index.jsp'");
-				script.println("</script>");
-			}
+		if (result == 1) {
+			session.setAttribute("id", user.getId());
+			
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("location.href = 'index.jsp'");
+			script.println("</script>");
+		} else if (result == 0) {
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('비밀번호가 틀립니다.')");
+			script.println("history.back()");
+			script.println("</script>");
+		} else if (result == -1) {
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('존재하지 않는 아이디입니다.')");
+			script.println("history.back()");
+			script.println("</script>");
+		} else if (result == -2) {
+			PrintWriter script = response.getWriter();
+			script.println("<script>");
+			script.println("alert('데이터베이스 오류가 발생하였습니다.')");
+			script.println("history.back()");
+			script.println("</script>");
 		}
 			
 	%>
