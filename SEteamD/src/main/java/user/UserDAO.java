@@ -42,8 +42,6 @@ public class UserDAO {
 	public int insertUser(User user) {
 		String sql = "INSERT INTO user VALUES (?,?,?,?)";
 		try {
-//			Connection conn = DatabaseUtill.getConnection();
-
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getId());
 			pstmt.setString(2, user.getPw());

@@ -104,7 +104,7 @@
 						} else {
 						%>
 						<li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
-						<li class="nav-item"><a class="nav-link" href="login.jsp">Log-out</a></li>
+						<li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
 						<%
 						}
 						%>
