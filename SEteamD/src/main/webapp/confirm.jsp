@@ -1,23 +1,39 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+	<%
+	String data = request.getParameter("data");
+	System.out.println(data+"여기는 confirm.jsp임");
+	
+	String []arr = data.split("-/-/-");
+	String name = arr[0];
+	String phoneN = arr[1];
+	String date = arr[2];
+	String cover = arr[3];
+	String time = arr[4];
+	String table_number = arr[5];
+	
+%>
 <!DOCTYPE html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-  <title>SE-DTEAM</title>
-  <!-- Favicon-->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
-  <!-- Font Awesome icons (free version)-->
-  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-  <!-- Google fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
-  <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
-  <!-- Core theme CSS (includes Bootstrap)-->
-  <link href="css/styles.css" rel="stylesheet" />
-    <style type="text/css">
-      @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap');
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>SE-DTEAM</title>
+        <!-- Favicon-->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap" rel="stylesheet">
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300&display=swap');
         .main {
             width: 450px;
                 height: 538px;
@@ -100,34 +116,55 @@
             }
          .btn-reser{
            margin-top: -7px;
-           margin-left: 180px;
-          
+             margin-left: 203px;
             
          }
          .btn-reserb{
             color:white;
-            background-color: rgb(59, 149, 252);
-            border-color:rgb(59, 149, 252);
+            background-color: orange;
+            border-color: rgb(227, 149, 5);
             border-radius: 3px;
             width: 80px;
             height: 40px;
         
             
             }
-</style>
-<script>
-    function buttonClick() {
-        document.location.href="modify.html";
-    
+            .btn-reserb1{
+            color:white;
+            background-color: rgb(169, 163, 163);
+            border-color:rgb(146, 144, 144);
+            border-radius: 3px;
+            width: 140px;
+            height: 40px;
+            
+            
+            }
+            /*글씨체 클래스 추가*/
+            li,.page-section{
+                font-family:'Montserrat';
+            }
+            .menu:after{display:block; content:''; clear:both;}
+            .menu > li{position:relative; float:left; margin-right:5px;}
+            .menu > li > a{display:block; padding:0 15px;  height:40px; line-height:40px; color:#fff;}
+            .menu > li:hover .sub-menu {opacity:1; visibility:visible;}
+            .sub-menu{visibility:visible; opacity:0; position:absolute; left:0; right:0; margin-left:15px;}
+    </style>
+    <script>
+        function buttonClick() {
+            alert("방문해주셔서 감사합니다.")
+            document.location.href="index.jsp";
+           
+        }
+    </script>
+ 
+        
 
-    }
-</script>
 </head>
 <body id="page-top">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.png" alt="..." /></a>
+            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -168,18 +205,22 @@
                     <tr>
                     <td>예약자 성함</td>
                     <td style="color:black; text-align: right;">&nbsp;</td>
+                    <td style="color:black; text-align: right;" id="name"></td>
                     </tr>
                     <tr>
                         <td>예약자 전화번호</td>
                         <td style="color:black; text-align: right;">&nbsp;</td>
+                        <td style="color:black; text-align: right;" id="phoneN"></td>
                     </tr>
                     <tr>
                         <td>예약 테이블</td>
                         <td style="color:black; text-align: right;">&nbsp;</td>
+                        <td style="color:black; text-align: right;" id="table_number"></td>
                     </tr>
                     <tr>
                         <td>예약 인원</td>
                         <td style="color:black; text-align: right;">&nbsp;</td>
+                        <td style="color:black; text-align: right;" id="cover"></td>
                     </tr>
                 </table>
                 <hr class="hr-dashed">
@@ -187,10 +228,12 @@
                     <tr>
                         <td>예약 시간</td>
                         <td style="color:black; text-align: right;">&nbsp;</td>
+                        <td style="color:black; text-align: right;" id="time"></td>
                     </tr>
                     <tr>
                         <td>예약 날짜</td>
                         <td style="color:black; text-align: right;">&nbsp;</td>
+                        <td style="color:black; text-align: right;" id="date"></td>
                     </tr>
                     </table>
                   
@@ -213,9 +256,59 @@
                 <hr class="line">
                 <div class="btn-reser">
                 <button type="submit" class="btn-reserb" onclick="buttonClick()">확인</button>
-             
+            <!--     <button type="submit" class="btn-reserb1" onclick="document.location.href='modify.jsp'">예약 취소/변경</button> -->
+             <button type="submit" class="btn-reserb1" onclick="goModify()">예약 취소/변경</button>
             </div>
         </div>
-    
 </body>
+<script>
+	
+	$(document).ready(function (){
+		
+		getData();
+		
+	})
+	
+	function getData(){
+		
+		let name = '<%=name%>';
+		let phoneN = '<%=phoneN%>';
+		let date = '<%=date%>';
+		let cover = '<%=cover%>명';
+		let time = '<%=time%>';
+		let table_number = '<%=table_number%>번';
+
+		let nametd = $('#name');
+		let nametext = name;
+		nametd.append(nametext);
+		
+		let phoneNtd = $('#phoneN');
+		let phoneNtext = phoneN;
+		phoneNtd.append(phoneNtext);
+		
+		let datetd = $('#date');
+		let datetext = date;
+		datetd.append(datetext);
+		
+		let covertd = $('#cover');
+		let covertext = cover;
+		covertd.append(covertext);
+		
+		let timetd = $('#time');
+		let timetext = time;
+		timetd.append(timetext);
+		
+		let table_numbertd = $('#table_number');
+		let table_numbertext = table_number;
+		table_numbertd.append(table_number);
+		
+	}
+	
+	function goModify(){
+		let data = "<%=data%>";
+		location.href = "modify.jsp?data="+data;
+	}
+	
+	
+</script>
 </html>

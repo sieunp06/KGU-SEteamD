@@ -1,5 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="user.UserDAO"%>
+<%@ page import="java.io.PrintWriter"%>
+<jsp:useBean id="user" class="user.User" scope="page" />
+<jsp:setProperty name="user" property="id" />
+<jsp:setProperty name="user" property="admin" />
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +15,7 @@
 <meta name="author" content="" />
 <title>SE-DTEAM</title>
 <!-- Favicon-->
-<link rel="icon" type="image/x-icon" href="assets/favicon.png" />
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
 <!-- Font Awesome icons (free version)-->
 <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js"
 	crossorigin="anonymous"></script>
@@ -72,15 +77,7 @@ li, .page-section {
 /*여기까지*/
 </style>
 </head>
-</head>
 <body id="page-top">
-
-	<%
-	String id = null;
-	if (session.getAttribute("id") != null) {
-		id = (String) session.getAttribute("id");
-	}
-	%>
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
 		<div class="container">
@@ -94,29 +91,18 @@ li, .page-section {
 			</button>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="menu navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-					<li class="nav-item"><a class="nav-link" href="index.jsp">Services</a></li>
+					<li class="nav-item"><a class="nav-link" href="index2.jsp">Services</a></li>
 					<li class="nav-item"><a class="nav-link" href="#services">About</a></li>
-					<%
-					if (id == null) {
-					%>
-					<li class="nav-item"><a class="nav-link" href="login.jsp">Log-in</a></li>
-					
-					<%
-					} else {
-					%>
-					<li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
-					<li class="nav-item"><a class="nav-link" href="">Confirm/Modify</a>
-						<ul class="sub-menu nav-item1">
-							<li><a href="confirm.jsp">Confirm</a></li>
-							<li><a href="reservationListModify.jsp">Modify</a></li>
-							<li><a href="reservationList.jsp">Cancel</a></li>
-						</ul></li>
-						<li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
-<!-- 					<li class="navbar-brands"><a class="nav-link" href="manage.html"><img src="assets/user.png"></a></li> -->
-						
-					<%
-					}
-					%>
+					<li class="nav-item"><a class="nav-link" href="manage.jsp">Manage</a></li>
+<!-- 					<li class="nav-item"><a class="nav-link" href="">Confirm/Modify</a> -->
+<!-- 						<ul class="sub-menu nav-item1"> -->
+<!-- 							<li><a href="con_confirm.html">Confirm</a></li> -->
+<!-- 							<li><a href="mo_modify.html">Modify</a></li> -->
+<!-- 							<li><a href="cancel.html">Cancel</a></li> -->
+<!-- 						</ul></li> -->
+					<li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
+					<li class="navbar-brands"><a class="nav-link"
+						href="manage.html"><img src="user.png"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -127,13 +113,6 @@ li, .page-section {
 			<div class="masthead-subheading">Welcome To Our Restaurant!</div>
 			<div class="masthead-heading text-uppercase">It's Nice To Meet
 				You</div>
-				<%
-					if (id != null) {
-					%>
-				<a class="btn btn-primary btn-xl text-uppercase" href="reservation.jsp">Reservation</a>
-				<%
-					}
-					%>
 		</div>
 	</header>
 
@@ -164,6 +143,10 @@ li, .page-section {
 						class="fas fa-laptop fa-stack-1x fa-inverse"></i>
 					</span>
 					<h4 class="my-3">Information</h4>
+					<p class="text-muted">현 레스토랑 통계지표</p>
+					<button class="btn-jsp" type="button"
+						onclick="location.href='filedownload.jsp' ">Click!</button>
+					</a>
 				</div>
 				<div class="col-md-4">
 					<span class="fa-stack fa-4x"> <i

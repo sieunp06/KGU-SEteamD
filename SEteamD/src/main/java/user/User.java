@@ -5,6 +5,7 @@ public class User {
 	private String pw;
 	private String name;
 	private String phoneNumber;
+	private int admin;
 
 //	public User(String id, String pw, String name, String phoneNumber) {
 //		super();
@@ -44,5 +45,13 @@ public class User {
 
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
+	}
+	
+	public int getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(int admin) {
+		this.admin = admin;
 	}
 }

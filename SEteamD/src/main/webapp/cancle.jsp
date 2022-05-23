@@ -1,3 +1,26 @@
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%-- <%@ page import="user.UserDAO" %>
+<%@ page import="java.io.PrintWriter" %>
+<% request.setCharacterEncoding("UTF-8"); %>
+<jsp:useBean id="user" class="user.User" scope="page"/>
+<jsp:setProperty name="user" property="id"/>
+<jsp:setProperty name="user" property="pw"/>
+<% String id = (String)session.getAttribute("id"); %> --%>
+<%
+	String data = request.getParameter("data");
+	System.out.println(data+"여기는 cancle.jsp임");
+	
+	String []arr = data.split("-/-/-");
+	String name = arr[0];
+	String phoneN = arr[1];
+	String date = arr[2];
+	String cover = arr[3];
+	String time = arr[4];
+	String table_number = arr[5];
+	
+%>
+
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8" />
@@ -6,6 +29,7 @@
   <meta name="author" content="" />
   <title>SE-DTEAM</title>
   <!-- Favicon-->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -111,8 +135,16 @@
             width: 80px;
             height: 40px;
         
-            
             }
+/*글씨체 추가*/
+            li,.page-section{
+                font-family:'Montserrat';
+            }
+            .menu:after{display:block; content:''; clear:both;}
+            .menu > li{position:relative; float:left; margin-right:5px;}
+            .menu > li > a{display:block; padding:0 15px;  height:40px; line-height:40px; color:#fff;}
+            .menu > li:hover .sub-menu {opacity:1; visibility:visible;}
+            .sub-menu{visibility:visible; opacity:0; position:absolute; left:0; right:0; margin-left:15px;}
 </style>
 <script>
     
@@ -133,7 +165,7 @@
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
         <div class="container">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+            <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.png" alt="..." /></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 Menu
                 <i class="fas fa-bars ms-1"></i>
@@ -174,18 +206,22 @@
                     <tr>
                     <td>예약자 성함</td>
                     <td style="color:black; text-align: right;">&nbsp;</td>
+                    <td style="color:black; text-align: right;" id="name"></td>
                     </tr>
                     <tr>
                         <td>예약자 전화번호</td>
                         <td style="color:black; text-align: right;">&nbsp;</td>
+                        <td style="color:black; text-align: right;" id="phoneN"></td>
                     </tr>
                     <tr>
                         <td>예약 테이블</td>
                         <td style="color:black; text-align: right;">&nbsp;</td>
+                        <td style="color:black; text-align: right;" id="table_number"></td>
                     </tr>
                     <tr>
                         <td>예약 인원</td>
                         <td style="color:black; text-align: right;">&nbsp;</td>
+                        <td style="color:black; text-align: right;" id="cover"></td>
                     </tr>
                 </table>
                 <hr class="hr-dashed">
@@ -193,13 +229,14 @@
                     <tr>
                         <td>예약 시간</td>
                         <td style="color:black; text-align: right;">&nbsp;</td>
+                        <td style="color:black; text-align: right;" id="time"></td>
                     </tr>
                     <tr>
                         <td>예약 날짜</td>
                         <td style="color:black; text-align: right;">&nbsp;</td>
+                        <td style="color:black; text-align: right;" id="date"></td>
                     </tr>
-                    </table>
-                  
+                    </table> 
             </div>
             <hr class="hr-dashed1">
             <table class="table3">
@@ -218,10 +255,98 @@
                 </table>
                 <hr class="line">
                 <div class="btn-reser">
-                <button type="submit" class="btn-reserb" onclick="buttonClick()">취소</button>
+                <button type="submit" class="btn-reserb" onclick="delectReservation()">취소</button>
              
             </div>
         </div>
     
 </body>
+<script>
+
+	$(document).ready(function (){
+		
+		getData();
+		
+	})
+
+	function getData(){
+		
+		let name = '<%=name%>';
+		let phoneN = '<%=phoneN%>';
+		let date = '<%=date%>';
+		let cover = '<%=cover%>명';
+		let time = '<%=time%>';
+		let table_number = '<%=table_number%>번';
+	
+		let nametd = $('#name');
+		let nametext = name;
+		nametd.append(nametext);
+		
+		let phoneNtd = $('#phoneN');
+		let phoneNtext = phoneN;
+		phoneNtd.append(phoneNtext);
+		
+		let datetd = $('#date');
+		let datetext = date;
+		datetd.append(datetext);
+		
+		let covertd = $('#cover');
+		let covertext = cover;
+		covertd.append(covertext);
+		
+		let timetd = $('#time');
+		let timetext = time;
+		timetd.append(timetext);
+		
+		let table_numbertd = $('#table_number');
+		let table_numbertext = table_number;
+		table_numbertd.append(table_number);
+		
+	}
+
+	function delectReservation(){
+	
+		let data = "<%=data%>";
+		
+		$.ajax({
+			url : "ajax.do",
+			type : "post",
+			data : {
+				req : "delectReservation",
+				data : data
+			},
+			success : function(result) {
+				alert("예약이 취소되었습니다.");
+				location.href="index.jsp";
+
+			}
+		})
+		
+	}
+
+<%-- 	$(document).ready(function (){
+		
+		getData();
+		
+	})
+	
+	function getData() {
+		
+		let user_id = "<%=id%>";
+		
+		$.ajax({
+			url : "ajax.do",
+			type : "post",
+		data : {
+			req : "getReservation",
+			data : user_id
+		},
+		success : function(result) {
+			alert(result);
+		}
+		
+	}
+	 --%>
+
+</script>
 </html>

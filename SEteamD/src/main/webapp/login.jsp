@@ -9,7 +9,7 @@
         <meta name="author" content="" />
         <title>SE-DTEAM</title>
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
@@ -70,6 +70,15 @@
                 filter: brightness(70%);
                 color: white ;
             }
+            /*.main 추가*/
+            li,.main{
+                font-family:'Montserrat';
+            }
+            .menu:after{display:block; content:''; clear:both;}
+            .menu > li{position:relative; float:left; margin-right:5px;}
+            .menu > li > a{display:block; padding:0 15px;  height:40px; line-height:40px; color:#fff;}
+            .menu > li:hover .sub-menu {opacity:1; visibility:visible;}
+            .sub-menu{visibility:visible; opacity:0; position:absolute; left:0; right:0; margin-left:15px;}
             
         </style>
     </head>
@@ -84,7 +93,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.svg" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.png" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
@@ -104,7 +113,7 @@
 						} else {
 						%>
 						<li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
-						<li class="nav-item"><a class="nav-link" href="login.jsp">Log-out</a></li>
+						<li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
 						<%
 						}
 						%>
@@ -140,4 +149,5 @@
 
                
 </body>
+
 </html>

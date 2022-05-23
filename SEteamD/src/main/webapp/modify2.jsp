@@ -1,3 +1,10 @@
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%
+	String data = request.getParameter("data");
+	System.out.println(data+"여기는 modify.jsp임");
+%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -7,6 +14,7 @@
         <meta name="author" content="" />
         <title>SE-DTEAM</title>
         <!-- Favicon-->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -58,10 +66,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index2.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reservation.html">Reservation</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reservation.html">Confirm/Modify</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html">Log-out</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index1.jsp">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="modify2.jsp">Confirm/Modify</a></li>
+                        <li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
                     </ul>
                 </div>
             </div>
@@ -85,10 +93,21 @@
 
                 <!-- Submit Button-->
                 <div id="container">
-                <div class="btn"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="button" onclick="document.location.href='con_confirm.html'">Confirm</button></div>
-                <div class="btn"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="button" onclick="document.location.href='cancel.html'">Cancel</button></div>
-                <div class="btn"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="button" onclick="document.location.href='mo_modify.html'">Modify</button></div>
+                <div class="btn"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="button" onclick="goCancle()">Cancel</button></div>
+                <div class="btn"><button class="btn btn-primary btn-xl text-uppercase" id="submitButton" type="button" onclick="goMomodify()">Modify</button></div>
                 </div>
     
     </body>
+    <script>
+	function goCancle(){
+		let data = "<%=data%>";
+		location.href = "reservationList.jsp?data="+data;
+	}
+	
+	function goMomodify(){
+		let data = "<%=data%>";
+		location.href = "reservationListModify.jsp?data="+data;
+	}
+	
+    </script>
 </html>

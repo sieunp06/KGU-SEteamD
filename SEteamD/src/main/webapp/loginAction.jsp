@@ -18,6 +18,8 @@
 	<%
 		String id = null;
 	
+		String id_admin = request.getParameter("id");
+	
 		if (session.getAttribute("id") != null) {
 			id = (String)session.getAttribute("id");
 		}
@@ -36,9 +38,17 @@
 			session.setAttribute("id", user.getId());
 			
 			PrintWriter script = response.getWriter();
-			script.println("<script>");
-			script.println("location.href = 'index.jsp'");
-			script.println("</script>");
+			
+			if (userDAO.adminCheck(id_admin) == 1) {
+				script.println("<script>");
+				script.println("alert('관리자 계정입니다.')");
+	 			script.println("location.href = 'index2.jsp'");
+	 			script.println("</script>");
+			} else {
+				script.println("<script>");
+	 			script.println("location.href = 'index.jsp'");
+	 			script.println("</script>");
+			}
 		} else if (result == 0) {
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
