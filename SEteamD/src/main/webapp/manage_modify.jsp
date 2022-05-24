@@ -15,6 +15,7 @@
 
 <jsp:useBean id="manage" class="manage.Manage" scope="page"/>
 <jsp:setProperty name="manage" property="user_id"/>
+
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8" />
@@ -24,7 +25,6 @@
   <title>SE-DTEAM</title>
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <!-- Favicon-->
-   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <link rel="icon" type="image/x-icon" href="assets/favicon.png" />
   <!-- Font Awesome icons (free version)-->
   <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -142,13 +142,30 @@ table{
                 <div class="container1" >
                   <p>Kyonggi <br>Resturant<br>SEED</p>
                 <div id="text" style="font-weight: bolder; margin-left:50px;  font-family:'Montserrat';">
-        
-<!--            	<h4 class="tt">예약 관리</h4> -->
-<ul style="font-size: 15px; list-style:none; font-weight: blod; margin-left: -35px; margin-top: 30px;">
+
+                  <script>
+                    var today = new Date();
+                    var year = today.getFullYear();
+                    var month = ('0' + (today.getMonth() + 1)).slice(-2);
+                    var day = ('0' + today.getDate()).slice(-2);
+                    var hours = ('0' + today.getHours()).slice(-2); 
+                    var minutes = ('0' + today.getMinutes()).slice(-2);
+                    
+                    document.write(year+'년');
+                    document.write('<br>');
+                    document.writeln(month+'월'+' '+day+'일');
+                    document.write(hours+' '+':'+' '+minutes);
+                    document.getElementById("text").style.fontSize = '30px';
+                    document.getElementById("text").style.fontweight ;
+
+
+                </script>
+                <ul style="font-size: 15px; list-style:none; font-weight: blod; margin-left: -35px; margin-top: 30px;">
 <!--                   <li>
-                    ⏵ 예약 취소
+                    ⏵ 예약 수정
                   </li> -->
-                 <li><a class="nav-link" href="manage.jsp">
+                  <ul style="font-size: 15px; list-style:none; font-weight: blod; margin-left: -35px; margin-top: 30px; ;">
+                  <li><a class="nav-link" href="manage.jsp">
                     ⏵ 예약 현황
                 </a></li>
                   <li><a class="nav-link" href="manage_delete.jsp">
@@ -161,84 +178,88 @@ table{
                     ⏵ 예약 등록
                 </a> </li>
                 </ul>
+                </ul>
                 </div>
                 </div>
                 <div class="container2">
                   </div>
                   <div class="margin">
-                  <h5> 예약 취소</h5>
+                  <h5> 예약 수정</h5>
                  
                   <table class="tg" width="850" height="100" >
-           	<%
-           	Class.forName("com.mysql.cj.jdbc.Driver");
-           	String dbURL = "jdbc:mysql://localhost:3306/booksys";
-           	String dbID = "root";
-		   	String dbPW = "software!";
-		   	
-		   	Connection conn = DriverManager.getConnection(dbURL, dbID, dbPW);
-			String sql = "SELECT * FROM reservation WHERE date >= date_format(NOW(),'%Y%m%d')";
-		   	PreparedStatement pstmt = conn.prepareStatement(sql);
-		   	ResultSet rs = pstmt.executeQuery(sql);	
-
-		   	ManageDAO ManageDAO = new ManageDAO();
-		   	UserDAO UserDAO = new UserDAO();
-		   	
-		   	int i = 0;
+                    
+            <%
+	           	Class.forName("com.mysql.cj.jdbc.Driver");
+	           	String dbURL = "jdbc:mysql://localhost:3306/booksys";
+	           	String dbID = "root";
+			   	String dbPW = "software!";
+			   	
+			   	Connection conn = DriverManager.getConnection(dbURL, dbID, dbPW);
+				String sql = "SELECT * FROM reservation WHERE date >= date_format(NOW(),'%Y%m%d')";
+			   	PreparedStatement pstmt = conn.prepareStatement(sql);
+			   	ResultSet rs = pstmt.executeQuery(sql);	
+	
+			   	ManageDAO ManageDAO = new ManageDAO();
+			   	UserDAO UserDAO = new UserDAO();
+			   	
+			   	int i = 0;
            	%>
                 <table class="tg" width="1000" height="50">
-                 
-                <thead>
-                  <tr>
-                    <td class="tg-uqo3" colspan="1">번호</td>
-                    <td class="tg-uqo3" colspan="2">이름</td>
-                    <td class="tg-uqo3" colspan="2">전화번호</td>
-                    <td class="tg-uqo3" colspan="2">날짜</td>
-                    <td class="tg-uqo3" colspan="2">시간</td>
-                    <td class="tg-uqo3" colspan="2">인원</td>
-                    <td class="tg-uqo3" colspan="2">테이블</td>
-                    <td class="tg-uqo3" colspan="2">예약삭제</td>
-                  </tr>
-                </thead>
-        
-                <tbody>
                 
+	                <thead>
+	                  <tr>
+	                    <td class="tg-uqo3" colspan="1">번호</td>
+	                    <td class="tg-uqo3" colspan="2">이름</td>
+	                    <td class="tg-uqo3" colspan="2">전화번호</td>
+	                    <td class="tg-uqo3" colspan="2">날짜</td>
+	                    <td class="tg-uqo3" colspan="2">시간</td>
+	                    <td class="tg-uqo3" colspan="2">인원</td>
+	                    <td class="tg-uqo3" colspan="2">테이블</td>
+	                    <td class="tg-uqo3" colspan="2">예약수정</td>
+	                  </tr>
+	                </thead>
+	        
+	                <tbody>
+	                
                 <%
                 
-                while (rs.next()) {
+               		while (rs.next()) {
                 
                 %>
-                                
-                  <tr height="30">
-                    <td class="tg-lax" colspan="1"><%= i + 1 %></td>
-  
-                    <td class="tg-0lax" colspan="2"><%= ManageDAO.userName(rs.getString("user_id")) %></td>
-                    <td class="tg-0lax" colspan="2"><%= ManageDAO.userPhoneNumber(rs.getString("user_id")) %></td>
-
-                    <td class="tg-0lax" colspan="2"><%= rs.getString("date") %></td>
-                    <td class="tg-0lax" colspan="2"><%= rs.getString("time") %></td>
-                    <td class="tg-0lax" colspan="2"><%= rs.getString("covers") %></td>
-                    <td class="tg-0lax" colspan="2"><%= rs.getString("table_number") %></td>
-                    <td class="tg-0lax" colspan="2"><input type="button" class="checkBtn" value="예약삭제" /></td>
-                  </tr>
+	                                
+	                  <tr height="30">
+	                    <td class="tg-lax" colspan="1"><%= i + 1 %></td>
+	  
+	                    <td class="tg-0lax" colspan="2"><%= ManageDAO.userName(rs.getString("user_id")) %></td>
+	                    <td class="tg-0lax" colspan="2"><%= ManageDAO.userPhoneNumber(rs.getString("user_id")) %></td>
+	
+	                    <td class="tg-0lax" colspan="2"><%= rs.getString("date") %></td>
+	                    <td class="tg-0lax" colspan="2"><%= rs.getString("time") %></td>
+	                    <td class="tg-0lax" colspan="2"><%= rs.getString("covers") %></td>
+	                    <td class="tg-0lax" colspan="2"><%= rs.getString("table_number") %></td>
+	                    <td class="tg-0lax" colspan="2"><input type="button" class="checkBtn" value="예약수정" /></td>
+	                  </tr>
+	                  
+	                <%
+			                i++;
+			                }
+	                %>
+                 </table>
                   
-                <%
-                i++;
-                }
-                %>
-                </tbody>
-                </table>
-                <div class="container">
-                    <div class="row">
-                      <div class="col-12">
-                        <div>
-                        </div>
-                        <!-- Submit Button-->
-                     
-                          
-                        </div>
-                      </div>
-                    </div>
+          
+                 
+                <div class="row">
+                  <div class="col-12">
+               
+                
+                    <!-- Submit Button-->
                   </div>
+                    
+                  </div>
+                </div>
+                       
+
+              </div>
             
         </body>
         <script>
@@ -271,7 +292,7 @@ table{
 	    	});
 	    	
 	    	function passData(data){
-	    		location.href = "cancle.jsp?data="+data;
+	    		location.href = "mo_modify.jsp?data="+data;
 	    	}
         </script>
         </html>

@@ -128,7 +128,7 @@ table{
                                 <li class="nav-item"><a class="nav-link" href="index2.jsp">Services</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#services">About</a></li>
 			                  	<li class="nav-item"><a class="nav-link" href="manage.jsp">Confirm</a></li>
-								<li class="nav-item"><a class="nav-link" href="manage.jsp">Modify</a></li>
+								<li class="nav-item"><a class="nav-link" href="manage_modify.jsp">Modify</a></li>
 								<li class="nav-item"><a class="nav-link" href="manage_delete.jsp">Cancel</a></li>
                                 <li class="nav-item"><a class="nav-link" href="index.jsp">Log-out</a></li>
 
@@ -143,9 +143,21 @@ table{
         
 <!--            	<h4 class="tt">예약 관리</h4> -->
 <ul style="font-size: 15px; list-style:none; font-weight: blod; margin-left: -35px; margin-top: 30px;">
-                  <li>
+<!--                   <li>
                     ⏵ 예약 현황
-                  </li>
+                  </li> -->
+                 <li><a class="nav-link" href="manage.jsp">
+                    ⏵ 예약 현황
+                </a></li>
+                  <li><a class="nav-link" href="manage_delete.jsp">
+                    ⏵ 예약 취소
+                </a></li>
+                  <li><a class="nav-link" href="manage_modify.jsp">
+                    ⏵ 예약 수정
+                </a></li>
+                  <li><a class="nav-link" href="manage_reservation.jsp">
+                    ⏵ 예약 등록
+                </a> </li>
                 </ul>
                 </div>
                 </div>
@@ -171,7 +183,7 @@ table{
 		   	
 		   	int i = 0;
            	%>
-                <table class="tg" width="1200" height="50">
+                <table class="tg" width="1000" height="50">
                  
                 <thead>
                   <tr>

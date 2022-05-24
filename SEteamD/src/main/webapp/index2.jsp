@@ -93,9 +93,10 @@ li, .page-section {
 				<ul class="menu navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 					<li class="nav-item"><a class="nav-link" href="index2.jsp">Services</a></li>
 					<li class="nav-item"><a class="nav-link" href="#services">About</a></li>
+					<li class="nav-item"><a class="nav-link" href="manage_reservation.jsp">Reservation</a></li>
 					<li class="nav-item"><a class="nav-link" href="manage.jsp">Confirm</a></li>
-					<li class="nav-item"><a class="nav-link" href="manage.jsp">Modify</a></li>
-					<li class="nav-item"><a class="nav-link" href="manage.jsp">Cancel</a></li>
+					<li class="nav-item"><a class="nav-link" href="manage_modify.jsp">Modify</a></li>
+					<li class="nav-item"><a class="nav-link" href="manage_delete.jsp">Cancel</a></li>
 			
 						
 					<li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>

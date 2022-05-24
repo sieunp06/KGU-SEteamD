@@ -194,6 +194,10 @@ input[type="radio"]:checked:after{
     color: black;
     
 }
+/*****************************************/
+input[type='radio']:disabled {
+  border: 3px solid rgba(255, 102, 102, 0.671);
+}
   
    /*폰트 넣을 class 추가*/         
    li,.container,.main1{
@@ -308,59 +312,58 @@ input[type="radio"]:checked:after{
           <h2 class="logo">&nbsp;</h2>
           <div class="container">
               <!--바꿈-->
-            <h5>Table 선택
-            <button class="btn-table" style="border: none; background:rgb(168, 166, 166);border-radius:  40px 80px; "><a href="assets/img/tables.png" >(테이블 배치도 click!)</a></button></h5>
-
-              
-      
-<div class="card">
-					<input type="radio" name="re_table" value="1" id="card3"> <label
+            <h5>Table 선택</h5>
+				<div class="card">
+					<input type="radio" name="re_table" value="1-/-/-2" id="re_table1"> <label
 						for="card1"><span></span>1번 테이블</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table" value="2" id="card4"> <label
+					<input type="radio" name="re_table" value="2-/-/-2" id="re_table2"> <label
 						for="card2"> <span></span>2번 테이블
 					</label><br>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table" value="3" id="card1"> <label
+					<input type="radio" name="re_table" value="3-/-/-2" id="re_table3"> <label
 						for="card3"> <span></span>3번 테이블
 					</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table" value="4" id="card1"> <label
+					<input type="radio" name="re_table" value="4-/-/-2" id="re_table4"> <label
 						for="card4"><span></span>4번 테이블</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table" value="5" id="card1"> <label
+					<input type="radio" name="re_table" value="5-/-/-4" id="re_table5"> <label
 						for="card5"><span></span>5번 테이블</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table" value="6" id="card1"> <label
+					<input type="radio" name="re_table" value="6-/-/-4" id="re_table6"> <label
 						for="card6"><span></span>6번 테이블</label><br>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table" value="7" id="card1"> <label
+					<input type="radio" name="re_table" value="7-/-/-4" id="re_table7"> <label
 						for="card7"> <span></span>7번 테이블
 					</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table" value="8" id="card1"> <label
+					<input type="radio" name="re_table" value="8-/-/-4" id="re_table8"> <label
 						for="card8"> <span></span>8번 테이블
 					</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table" value="9" id="card1"> <label
+					<input type="radio" name="re_table" value="9-/-/-6" id="re_table9"> <label
 						for="card9"> <span></span>9번 테이블
 					</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table" value="10" id="card1"> <label
+					<input type="radio" name="re_table" value="10-/-/-6" id="re_table10"> <label
 						for="card10"> <span></span>10번 테이블
 					</label><br>
 				</div>
 			</div>
-			<button class="btn-reser" id="submitButton" type="button" onclick="modifyReservation()">예약변경</button>
+		
+			    <div id="con"> 
+    <div style="display:inline-block"><button class="btn-reser" id="submitButton" type="button" onclick="modifyReservation()">예약변경</button></div>
+    </div>
 		</div>
 </section>  
 </body>
@@ -370,8 +373,77 @@ input[type="radio"]:checked:after{
 	$(document).ready(function (){
 		
 		getData();
+		duplication();
 		
 	})
+	
+	function duplication(){
+		
+		let date = "<%=date%>";
+		let time = "<%=time%>";
+		let data = date + '-/-/-' + time;
+		
+		let table_number = '<%=table_number%>';
+		
+		$.ajax({
+			url : "ajax.do",
+			type : "post",
+			data : {
+				req : "checkDuplication",
+				data : data
+			},
+			success : function(result) {
+				let tableArr = [];
+				tableArr = result.split('-/-/-');
+				let table1 = tableArr[0];
+				let table2 = tableArr[1];
+				let table3 = tableArr[2];
+				let table4 = tableArr[3];
+				let table5 = tableArr[4];
+				let table6 = tableArr[5];
+				let table7 = tableArr[6];
+				let table8 = tableArr[7];
+				let table9 = tableArr[8];
+				let table10 = tableArr[9];
+				
+ 				if(table1 == 1 && table_number!=1){
+ 					$("input[id='re_table1']").attr('disabled',true);
+				} 
+				if(table2 == 2 && table_number!=2){
+					//$('input:radio[name=re_table]:input[value=2-/-/-2]').attr("disabled", true);
+					$("input[id='re_table2']").attr('disabled',true);
+				}
+				 if(table3 == 3 && table_number!=3){
+					 $("input[id='re_table3']").attr('disabled',true);
+				}
+				if(table4 == 4 && table_number!=4){
+					$("input[id='re_table4']").attr('disabled',true);
+				}
+				if(table5 == 5 && table_number!=5){
+					$("input[id='re_table5']").attr('disabled',true);
+				}
+				if(table6 == 6 && table_number!=6){
+					$("input[id='re_table6']").attr('disabled',true);
+				}
+				if(table7 == 7 && table_number!=7){
+					$("input[id='re_table7']").attr('disabled',true);
+				}
+				if(table8 == 8 && table_number!=8){
+					$("input[id='re_table8']").attr('disabled',true);
+				}
+				if(table9 == 9 && table_number!=9){
+					$("input[id='re_table9']").attr('disabled',true);
+				}
+				if(table10 == 10 && table_number!=10){
+					$("input[id='re_table10']").attr('disabled',true);
+				}
+				
+				//alert(result);
+			}
+		})
+		
+	} 
+	
 	
 	function getData(){
 		
@@ -401,6 +473,12 @@ input[type="radio"]:checked:after{
 	
 	function modifyReservation() {
 		
+		let table_NS = $('input[name="re_table"]:checked').val();
+		let table_ns = [];
+		table_ns = table_NS.split('-/-/-');
+		let table = table_ns[0];
+		let table_seats = table_ns[1];
+		
 		let pr_name = '<%=name%>';
 		let pr_phoneN = '<%=phoneN%>';
 		let pr_date = '<%=date%>';
@@ -413,13 +491,38 @@ input[type="radio"]:checked:after{
 		let date = $('#date').val();
 		let cover = $('#cover').val();
 		let time = $('#time').val();
-		let table = $('input[name="re_table"]:checked').val();
+		//let table = $('input[name="re_table"]:checked').val();
 		let data = pr_name + '-/-/-' + pr_phoneN + '-/-/-' + pr_date + '-/-/-' + pr_cover
 		+ '-/-/-' + pr_time + "-/-/-" + pr_table_number + '-/-/-' + name + '-/-/-' + phoneN + '-/-/-' + date + '-/-/-' + cover
 		+ '-/-/-' + time + "-/-/-" + table;
 		
+		
+		if(cover > table_seats) {
+			alert(pr_cover+"은"+table+"번 테이블에 앉을 수 없습니다.");
+			location.reload();
+		}
+		else{
+			modifyReservation2(data);
+		}
 		//alert(data);
 		
+/* 		$.ajax({
+			url : "ajax.do",
+			type : "post",
+			data : {
+				req : "modifyReservation",
+				data : data
+			},
+			success : function(result) {
+				alert("예약이 수정되었습니다.");
+				location.href="index.jsp";
+			}
+		}) */
+		
+		
+	}
+	
+	function modifyReservation2(data){
 		$.ajax({
 			url : "ajax.do",
 			type : "post",
@@ -432,8 +535,6 @@ input[type="radio"]:checked:after{
 				location.href="index.jsp";
 			}
 		})
-		
-		
 	}
 	
 	

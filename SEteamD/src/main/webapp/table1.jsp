@@ -239,48 +239,48 @@ img{
 				<h5>Table 선택</h5>
 
 				<div class="card">
-					<input type="radio" name="re_table1" value="1-/-/-2" id="card1"> <label
+					<input type="radio" name="re_table" value="1-/-/-2" id="re_table1"> <label
 						for="card1"><span></span>1번 테이블</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table2" value="2-/-/-2" id="card1"> <label
+					<input type="radio" name="re_table" value="2-/-/-2" id="re_table2"> <label
 						for="card2"> <span></span>2번 테이블
 					</label><br>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table3" value="3-/-/-2" id="card1"> <label
+					<input type="radio" name="re_table" value="3-/-/-2" id="re_table3"> <label
 						for="card3"> <span></span>3번 테이블
 					</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table4" value="4-/-/-2" id="card1"> <label
+					<input type="radio" name="re_table" value="4-/-/-2" id="re_table4"> <label
 						for="card4"><span></span>4번 테이블</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table5" value="5-/-/-4" id="card1"> <label
+					<input type="radio" name="re_table" value="5-/-/-4" id="re_table5"> <label
 						for="card5"><span></span>5번 테이블</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table6" value="6-/-/-4" id="card1"> <label
+					<input type="radio" name="re_table" value="6-/-/-4" id="re_table6"> <label
 						for="card6"><span></span>6번 테이블</label><br>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table7" value="7-/-/-4" id="card1"> <label
+					<input type="radio" name="re_table" value="7-/-/-4" id="re_table7"> <label
 						for="card7"> <span></span>7번 테이블
 					</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table8" value="8-/-/-4" id="card1"> <label
+					<input type="radio" name="re_table" value="8-/-/-4" id="re_table8"> <label
 						for="card8"> <span></span>8번 테이블
 					</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table9" value="9-/-/-6" id="card1"> <label
+					<input type="radio" name="re_table" value="9-/-/-6" id="re_table9"> <label
 						for="card9"> <span></span>9번 테이블
 					</label>
 				</div>
 				<div class="card">
-					<input type="radio" name="re_table10" value="10-/-/-6" id="card1"> <label
+					<input type="radio" name="re_table" value="10-/-/-6" id="re_table10"> <label
 						for="card10"> <span></span>10번 테이블
 					</label><br>
 				</div>
@@ -330,35 +330,35 @@ img{
 				let table10 = tableArr[9];
 				
  				if(table1 == 1){
- 					$("input[name='re_table1']").attr('disabled',true);
+ 					$("input[id='re_table1']").attr('disabled',true);
 				} 
 				if(table2 == 2){
 					//$('input:radio[name=re_table]:input[value=2-/-/-2]').attr("disabled", true);
-					$("input[name='re_table2']").attr('disabled',true);
+					$("input[id='re_table2']").attr('disabled',true);
 				}
 				 if(table3 == 3){
-					 $("input[name='re_table3']").attr('disabled',true);
+					 $("input[id='re_table3']").attr('disabled',true);
 				}
 				if(table4 == 4){
-					$("input[name='re_table4']").attr('disabled',true);
+					$("input[id='re_table4']").attr('disabled',true);
 				}
 				if(table5 == 5){
-					$("input[name='re_table5']").attr('disabled',true);
+					$("input[id='re_table5']").attr('disabled',true);
 				}
 				if(table6 == 6){
-					$("input[name='re_table6']").attr('disabled',true);
+					$("input[id='re_table6']").attr('disabled',true);
 				}
 				if(table7 == 7){
-					$("input[name='re_table7']").attr('disabled',true);
+					$("input[id='re_table7']").attr('disabled',true);
 				}
 				if(table8 == 8){
-					$("input[name='re_table8']").attr('disabled',true);
+					$("input[id='re_table8']").attr('disabled',true);
 				}
 				if(table9 == 9){
-					$("input[name='re_table9']").attr('disabled',true);
+					$("input[id='re_table9']").attr('disabled',true);
 				}
 				if(table10 == 10){
-					$("input[name='re_table10']").attr('disabled',true);
+					$("input[id='re_table10']").attr('disabled',true);
 				}
 				
 				//alert(result);
@@ -371,7 +371,7 @@ img{
 	function addReservation() {
 		
 		//let table_NS = $('input[name="re_table"]:checked').val();
-		let table_NS = $('input[id="card1"]:checked').val();
+		let table_NS = $('input[name="re_table"]:checked').val();
 		let table_ns = [];
 		table_ns = table_NS.split('-/-/-');
 		let table = table_ns[0];
@@ -385,7 +385,6 @@ img{
 		//alert(data);
 		
 		let cover = <%=cover%>;
-		
 		
 		
  		if(cover > table_seats) {
