@@ -93,16 +93,12 @@ li, .page-section {
 				<ul class="menu navbar-nav text-uppercase ms-auto py-4 py-lg-0">
 					<li class="nav-item"><a class="nav-link" href="index2.jsp">Services</a></li>
 					<li class="nav-item"><a class="nav-link" href="#services">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="manage.jsp">Manage</a></li>
-<!-- 					<li class="nav-item"><a class="nav-link" href="">Confirm/Modify</a> -->
-<!-- 						<ul class="sub-menu nav-item1"> -->
-<!-- 							<li><a href="con_confirm.html">Confirm</a></li> -->
-<!-- 							<li><a href="mo_modify.html">Modify</a></li> -->
-<!-- 							<li><a href="cancel.html">Cancel</a></li> -->
-<!-- 						</ul></li> -->
+					<li class="nav-item"><a class="nav-link" href="manage.jsp">Confirm</a></li>
+					<li class="nav-item"><a class="nav-link" href="manage.jsp">Modify</a></li>
+					<li class="nav-item"><a class="nav-link" href="manage.jsp">Cancel</a></li>
+			
+						
 					<li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
-					<li class="navbar-brands"><a class="nav-link"
-						href="manage.html"><img src="user.png"></a></li>
 				</ul>
 			</div>
 		</div>

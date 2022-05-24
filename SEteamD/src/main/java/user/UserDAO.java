@@ -40,13 +40,14 @@ public class UserDAO {
 	}
 
 	public int insertUser(User user) {
-		String sql = "INSERT INTO user VALUES (?,?,?,?)";
+		String sql = "INSERT INTO user VALUES (?,?,?,?,?)";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getId());
 			pstmt.setString(2, user.getPw());
 			pstmt.setString(3, user.getName());
 			pstmt.setString(4, user.getPhoneNumber());
+			pstmt.setInt(5, 0);
 			return pstmt.executeUpdate(); // �젙�긽: �궫�엯�맂 �뜲�씠�꽣�쓽 媛쒖닔 > 0
 		} catch (Exception e) {
 			e.printStackTrace();

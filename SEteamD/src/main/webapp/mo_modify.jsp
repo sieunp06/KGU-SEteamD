@@ -243,10 +243,10 @@ input[type="radio"]:checked:after{
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.html">Reservation</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reservation.html">Confirm/Modify</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.html">Log-in</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.jsp">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="confirm.jsp">Confirm/Modify</a></li>
+                        <li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
                     </ul>
                 </div>
             </div>
@@ -309,7 +309,7 @@ input[type="radio"]:checked:after{
           <div class="container">
               <!--바꿈-->
             <h5>Table 선택
-            <button class="btn-table" style="border: none; background:rgb(168, 166, 166);border-radius:  40px 80px; "><a href="assets/img/tables.jpg" >(테이블 배치도 click!)</a></button></h5>
+            <button class="btn-table" style="border: none; background:rgb(168, 166, 166);border-radius:  40px 80px; "><a href="assets/img/tables.png" >(테이블 배치도 click!)</a></button></h5>
 
               
       

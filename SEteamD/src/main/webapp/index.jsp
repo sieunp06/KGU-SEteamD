@@ -1,5 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.Connection" %>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -80,6 +87,8 @@ li, .page-section {
 	if (session.getAttribute("id") != null) {
 		id = (String) session.getAttribute("id");
 	}
+
+	
 	%>
 	<!-- Navigation-->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
@@ -100,19 +109,59 @@ li, .page-section {
 					if (id == null) {
 					%>
 					<li class="nav-item"><a class="nav-link" href="login.jsp">Log-in</a></li>
-					
+					<li class="nav-item"><a class="nav-link" href="signup.jsp">Sign-up</a></li>
 					<%
 					} else {
 					%>
 					<li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
-					<li class="nav-item"><a class="nav-link" href="">Confirm/Modify</a>
-						<ul class="sub-menu nav-item1">
-							<li><a href="confirm.jsp">Confirm</a></li>
-							<li><a href="reservationListModify.jsp">Modify</a></li>
-							<li><a href="reservationList.jsp">Cancel</a></li>
-						</ul></li>
+<!-- 					<li class="nav-item"><a class="nav-link" href="confirm.jsp">Confirm/Modify</a> -->
+					<%
+				           	Class.forName("com.mysql.cj.jdbc.Driver");
+				           	String dbURL = "jdbc:mysql://localhost:3306/booksys";
+				           	String dbID = "root";
+						   	String dbPW = "software!";
+						   	
+						   	Connection conn = DriverManager.getConnection(dbURL, dbID, dbPW);
+							String sql_user = "select name, phoneNumber from user where id = ?";
+							String sql_reserv = "select date, covers, time, table_number from reservation where user_id = ?";
+
+						   	PreparedStatement pstmt_user = conn.prepareStatement(sql_user);
+						   	PreparedStatement pstmt_reserv = conn.prepareStatement(sql_reserv);
+						   	
+						   	pstmt_user.setString(1, id);
+						   	ResultSet rs_user = pstmt_user.executeQuery();	
+
+						   	pstmt_reserv.setString(1, id);
+						   	ResultSet rs_reserv = pstmt_reserv.executeQuery();	
+						   	
+							String name = "";
+							String phoneNumber = "";
+							String date = "";
+							String cover = "";
+							String time = "";
+							String table_number = "";
+							
+							if (rs_user.next()) {
+								name = rs_user.getString("name");
+								phoneNumber = rs_user.getString("phoneNumber");
+							}
+							
+							if (rs_reserv.next()) {
+								date = rs_reserv.getString("date");
+								cover = rs_reserv.getString("covers");
+								time = rs_reserv.getString("time");
+								table_number = rs_reserv.getString("table_number");
+							}
+						
+	           		%>
+	           		<li class="nav-item"><a class="nav-link" href="">Confirm/Modify</a>
+							<ul class="sub-menu nav-item1">
+								<li><a href=<%= "confirm.jsp?data=" + name + "-/-/-" + phoneNumber + "-/-/-" + date +  "-/-/-" + cover + "-/-/-" + time + "-/-/-" + table_number%>>Confirm</a></li>
+								<li><a href="reservationListModify.jsp">Modify</a></li>
+								<li><a href="reservationList.jsp">Cancel</a></li>
+							</ul></li>
+							
 						<li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
-<!-- 					<li class="navbar-brands"><a class="nav-link" href="manage.html"><img src="assets/user.png"></a></li> -->
 						
 					<%
 					}

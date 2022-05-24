@@ -127,9 +127,9 @@ table{
                             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                                 <li class="nav-item"><a class="nav-link" href="index2.jsp">Services</a></li>
                                 <li class="nav-item"><a class="nav-link" href="#services">About</a></li>
-			                  	<li class="nav-item"><a class="nav-link" href="manage.jsp">Confirm</a></li>
+                                <li class="nav-item"><a class="nav-link" href="manage.jsp">Confirm</a></li>
 								<li class="nav-item"><a class="nav-link" href="manage.jsp">Modify</a></li>
-								<li class="nav-item"><a class="nav-link" href="manage_delete.jsp">Cancel</a></li>
+								<li class="nav-item"><a class="nav-link" href="manage.jsp">Cancel</a></li>
                                 <li class="nav-item"><a class="nav-link" href="index.jsp">Log-out</a></li>
 
                                 
@@ -144,7 +144,7 @@ table{
 <!--            	<h4 class="tt">예약 관리</h4> -->
 <ul style="font-size: 15px; list-style:none; font-weight: blod; margin-left: -35px; margin-top: 30px;">
                   <li>
-                    ⏵ 예약 현황
+                    ⏵ 예약 취소
                   </li>
                 </ul>
                 </div>

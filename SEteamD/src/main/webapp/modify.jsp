@@ -66,10 +66,10 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="index2.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reservation.html">Reservation</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reservation.html">Confirm/Modify</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html">Log-out</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.jsp">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="modify.jsp">Confirm/Modify</a></li>
+                        <li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
                     </ul>
                 </div>
             </div>
@@ -90,6 +90,7 @@
             <!-- https://startbootstrap.com/solution/contact-forms-->
             <!-- to get an API token!-->
             
+
 
                 <!-- Submit Button-->
                 <div id="container">

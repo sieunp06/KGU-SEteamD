@@ -172,10 +172,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Reservation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="reservation.html">Confirm/Modify</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">Log-in</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.cancle">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
+                    <li class="nav-item"><a class="nav-link" href="modify.jsp">Confirm/Modify</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
                 </ul>
             </div>
         </div>

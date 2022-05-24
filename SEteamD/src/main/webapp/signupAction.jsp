@@ -6,6 +6,8 @@
 <jsp:useBean id="user" class="user.User" scope="page"/>
 <jsp:setProperty name="user" property="id"/>
 <jsp:setProperty name="user" property="pw"/>
+<jsp:setProperty name="user" property="name"/>
+<jsp:setProperty name="user" property="phoneNumber"/>
 <!DOCTYPE html>
 <html>
 <head>

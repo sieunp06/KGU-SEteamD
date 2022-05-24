@@ -210,14 +210,12 @@ img{
                         <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Confirm/Modify</a>
                             <ul class="sub-menu nav-item1">
-                                <li><a href="con_confirm.html">Confirm</a></li>
-                                <li><a href="mo_modify.html">Modify</a></li>
-                                <li><a href="cancel.html">Cancel</a></li>
+                                <li><a href="confirm.jsp">Confirm</a></li>
+                                <li><a href="modify.jsp">Modify</a></li>
+                                <li><a href="cancle.jsp">Cancel</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="index.jsp">Log-out</a></li>
-                        <li class="navbar-brands"><a class="nav-link" href="manage.jsp">
-<!--                         <img src="assets/img/user.png"> -->
                         </a></li>
                     </ul>
                 </div>
