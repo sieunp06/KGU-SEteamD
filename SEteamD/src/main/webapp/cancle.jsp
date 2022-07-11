@@ -89,6 +89,7 @@
              border: none;
              font-size: small;
              
+             
          }
          td{
              color:dimgrey;
@@ -152,7 +153,7 @@
                 var ret = confirm("예약을 취소 하시겠습니까?");
                 if(ret==true) {
                     alert('예약 취소되었습니다.')
-                    document.location.href="modify.html";
+                    document.location.href="modify.jsp";
                 }
                 else {
                     
@@ -172,10 +173,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.cancle">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="modify.jsp">Confirm/Modify</a></li>
-                    <li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
+                     <li class="nav-item"><a class="nav-link" href="index.jsp">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="">Confirm/Modify</a>
+                            <ul class="sub-menu nav-item1">
+                                <li><a href="confirm.jsp">Confirm</a></li>
+                                <li><a href="modify.jsp">Modify</a></li>
+                                <li><a href="cancle.jsp">Cancel</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="index.jsp">Log-out</a></li>
                 </ul>
             </div>
         </div>
@@ -197,7 +204,7 @@
                     </div>
             </div>
             <div class="container2">
-                <h5>예약이 <br> 완료 되었습니다.</h5>
+                <h5>취소할 예약 정보 <br> </h5>
                 <p>예약 상황</p>
                 <hr class="hr-dashed">
             </div>

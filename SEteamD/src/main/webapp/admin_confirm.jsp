@@ -152,7 +152,7 @@
     <script>
         function buttonClick() {
             alert("방문해주셔서 감사합니다.")
-            document.location.href="index.jsp";
+            document.location.href="admin_index.jsp";
            
         }
     </script>
@@ -170,17 +170,12 @@
                 <i class="fas fa-bars ms-1"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="menu navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="index.jsp">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
-                        <li class="nav-item"><a class="nav-link" href="">Confirm/Modify</a>
-                            <ul class="sub-menu nav-item1">
-                                <li><a href="confirm.jsp">Confirm</a></li>
-                                <li><a href="modify.jsp">Modify</a></li>
-                                <li><a href="cancle.jsp">Cancel</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="index.jsp">Log-out</a></li>
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="admin_index.jsp">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin_manage.jsp">Confirm</a></li>
+					<li class="nav-item"><a class="nav-link" href="admin_modify.jsp">Modify</a></li>
+					<li class="nav-item"><a class="nav-link" href="admin_delete.jsp">Cancel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
                 </ul>
             </div>
         </div>

@@ -157,8 +157,8 @@ li, .page-section {
 	           		<li class="nav-item"><a class="nav-link" href="">Confirm/Modify</a>
 							<ul class="sub-menu nav-item1">
 								<li><a href=<%= "confirm.jsp?data=" + name + "-/-/-" + phoneNumber + "-/-/-" + date +  "-/-/-" + cover + "-/-/-" + time + "-/-/-" + table_number%>>Confirm</a></li>
-								<li><a href="reservationListModify.jsp">Modify</a></li>
-								<li><a href="reservationList.jsp">Cancel</a></li>
+								<li><a href="user_modify.jsp">Modify</a></li>
+								<li><a href="user_cancel.jsp">Cancel</a></li>
 							</ul></li>
 							
 						<li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
@@ -201,18 +201,11 @@ li, .page-section {
 						class="fas fa-circle fa-stack-2x text-primary"></i> <i
 						class="fas fa-heart fa-stack-1x fa-inverse"></i>
 					</span>
-					<h4 class="my-3">소개</h4>
+					<h4 class="my-3">영업시간</h4>
 					<p class="text-muted">
 						Open : 12:00 <br> Closed : 23:00 <br> (last reservation:
 						22:00)<br> break-time : 16:00 ~ 17:00
 					</p>
-				</div>
-				<div class="col-md-4">
-					<span class="fa-stack fa-4x"> <i
-						class="fas fa-circle fa-stack-2x text-primary"></i> <i
-						class="fas fa-laptop fa-stack-1x fa-inverse"></i>
-					</span>
-					<h4 class="my-3">Information</h4>
 				</div>
 				<div class="col-md-4">
 					<span class="fa-stack fa-4x"> <i
@@ -222,6 +215,16 @@ li, .page-section {
 					<h4 class="my-3">오시는 길</h4>
 					<p class="text-muted">
 						경기도 수원시 영통구 광교산로 154-42<br>이의동 산94-6 16227
+					</p>
+				</div>
+				<div class="col-md-4">
+					<span class="fa-stack fa-4x"> <i
+						class="fas fa-circle fa-stack-2x text-primary"></i> <i
+						class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+					</span>
+					<h4 class="my-3">사업자 정보</h4>
+					<p class="text-muted">
+						사업주 | 정진주<br>연락처 | 02-1234-5678<br>사업자번호 | 123-45-6789
 					</p>
 				</div>
 			</div>

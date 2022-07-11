@@ -257,16 +257,11 @@ li,.container1,.main1{
 	           		%>
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-					<li class="nav-item"><a class="nav-link" href="index.jsp">Services</a></li>
-					<li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
-<!-- 					<li class="nav-item"><a class="nav-link" href="modify.jsp?data=" + name + "-/-/-" + phoneNumber + "-/-/-" + date +  "-/-/-" + cover + "-/-/-" + time + "-/-/-" + table_number%">Confirm/Modify</a> -->
-	           		<li class="nav-item"><a class="nav-link" href=<%= "modify.jsp?data=" + name + "-/-/-" + phoneNumber + "-/-/-" + date +  "-/-/-" + cover + "-/-/-" + time + "-/-/-" + table_number %>">Confirm/Modify</a>
-							<ul class="sub-menu nav-item1">
-								<li><a href=<%= "confirm.jsp?data=" + name + "-/-/-" + phoneNumber + "-/-/-" + date +  "-/-/-" + cover + "-/-/-" + time + "-/-/-" + table_number%>>Confirm</a></li>
-								<li><a href="reservationListModify.jsp">Modify</a></li>
-								<li><a href="reservationList.jsp">Cancel</a></li>
-							</ul></li>
-						<li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
+					<li class="nav-item"><a class="nav-link" href="admin_index.jsp">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="admin_manage.jsp">Confirm</a></li>
+					<li class="nav-item"><a class="nav-link" href="admin_modify.jsp">Modify</a></li>
+					<li class="nav-item"><a class="nav-link" href="admin_delete.jsp">Cancel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="logoutAction.jsp">Log-out</a></li>
 				</ul>
 			</div>
 		</div>
@@ -280,10 +275,10 @@ li,.container1,.main1{
 <!-- 				<input type="text" placeholder="성명" id="name" class="reser"
 					size="37"><br> -->
 					<input type="text" placeholder="성명" id="name" class="reser"
-					size="37" value="" name = "name" readonly/><br>
+					size="37" value="" name = "name"/><br>
 				<h6>전화번호</h6>
 				<input type="tel" placeholder="전화번호" id="phoneN" class="reser"
-					size="37" value="" name = "phoneN" readonly/><br>
+					size="37" value="" name = "phoneN"/><br>
 				<h6>예약 날짜</h6>
 				<input class="reser" id="date" type="date" placeholder="Date *"
 					data-sb-validations="required,email" />
@@ -406,7 +401,7 @@ li,.container1,.main1{
 </body>
 <script>
 
-	$(document).ready(function (){
+	<%-- $(document).ready(function (){
 		
 		getData();
 		
@@ -435,7 +430,7 @@ li,.container1,.main1{
 			}
 		})
 		
-	}
+	} --%>
 	
  	var selectBoxChange = function(value) {
 		$("#covers").val(value);
@@ -457,7 +452,7 @@ li,.container1,.main1{
 	} 
 	
 	function passData(data){
-		location.href = "table.jsp?data="+data;
+		location.href = "table1.jsp?data="+data;
 	}
 </script>
 </html>

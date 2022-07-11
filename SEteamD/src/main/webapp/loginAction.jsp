@@ -42,7 +42,7 @@
 			if (userDAO.adminCheck(id_admin) == 1) {
 				script.println("<script>");
 				script.println("alert('관리자 계정입니다.')");
-	 			script.println("location.href = 'index2.jsp'");
+	 			script.println("location.href = 'admin_index.jsp'");
 	 			script.println("</script>");
 			} else {
 				script.println("<script>");

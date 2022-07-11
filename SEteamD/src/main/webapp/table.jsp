@@ -1,16 +1,14 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%
 	String data = request.getParameter("data");
-	System.out.println(data+"여기는 mo_modify.jsp임");
-	
+	System.out.println(data+"여기는 table.jsp임");
 	String []arr = data.split("-/-/-");
 	String name = arr[0];
 	String phoneN = arr[1];
 	String date = arr[2];
 	String cover = arr[3];
 	String time = arr[4];
-	String table_number = arr[5];
 	
 %>
 <!DOCTYPE html>
@@ -32,10 +30,12 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
         <style media="screen">
-            body{
-                background-color:#212529;
+          
+          h5{
+                margin-bottom: 20px;
             }
- .main {
+         
+            .main {
                 width: 400px;
                 height: 500px;
                 display: flex;
@@ -64,54 +64,22 @@
                 margin-left: 700px;
                 background-color: white;
             }
-        
-            .reser {
-                display: block;
-                margin-bottom: 3px;
-                padding: 3px;
-                border: 1px solid lightgray;
-                border-radius: 3px;
-                height:40px;
+            .logo {
+                margin-top: 20px;
+                margin-bottom: 40px;
             }
-            #date{
-                width: 370px;
-            }
-          select{
-              width: 370px;
-              height: 40px;
-              border-radius: 2px;
-              margin-bottom: 3px;
-            padding: 3px;
-            border-color: lightgray;
-          }
-          .container{
-            margin-top: 25px;
-          }
-
-          .container1{
-              margin-top: 25px;
-          }
-          .btn-reser{
-  color:white;
-  background-color: orange;
-  border-color: rgb(227, 149, 5);
-  border-radius: 3px;
-  width: 80px;
-  height: 40px;
-  margin-top:40px;
-  margin-left: 284px
-  
-}
+            
+            
 .card{
   height: 70px;
   width: 120px;
   position: relative;
   float:left;
-  margin: 2px;
+  margin: 1px;
   margin-bottom: 3px;
   font-size:13px
 }
-           
+
 input[type="radio"]{
   -webkit-appearance: none;
   appearance: none;
@@ -155,10 +123,14 @@ input[type="radio"]:hover{
   transform: scale(1.05);
 }
 input[type="radio"]:checked{
-  border: 3px solid orange;
+  border: 3px solid rgba(26, 169, 226, 0.671);
 }
 input[type="radio"]:checked:after{
-  background-color: orange;
+  background-color: rgba(25, 168, 224, 0.671);
+}
+/*****************************************/
+input[type='radio']:disabled {
+  border: 3px solid rgba(255, 102, 102, 0.671);
 }
 
 *:after{
@@ -167,40 +139,47 @@ input[type="radio"]:checked:after{
   margin: 0;
 }
         
-
+/*바뀐 css*/
 .btn-reser{
   color:white;
-  background-color: orange;
-  border-color: rgb(229, 150, 3);
+  background-color: rgba(26, 169, 226, 0.671);
+  border-color: rgba(6, 126, 173, 0.865);
   border-radius: 3px;
-  width: 120px;
-  height: 50px;
-  margin-top: 10px;
-  margin-left: 10px
+  width: 80px;
+  height: 40px;
+  margin-top: 0;
+ 
+  display: inline-block;
   
 }
+.btn-resers{
+  color:white;
+  background-color: darkgray;
+  border-color: rgba(169, 169, 169, 0.868);
+  border-radius: 3px;
+  width: 80px;
+  height:40px;
 
-
-*:after{
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+  margin-right: 192px;
+margin-left: -7px; 
+  display: inline-block;
 }
-/*바꿈*/
+#con{
+    margin-top: 15px;
+}
+/*여기까지가 바뀐 css*/
+img{
+    width: 350px;
+    height: 350px;
+    display: block; margin: 0px auto;
+}
 .btn-table{
-    width: 120px;
-    height: 20px;
+    width: 100px;
     font-size: x-small;
-    color: black;
-    
+    border-color: white;
 }
-/*****************************************/
-input[type='radio']:disabled {
-  border: 3px solid rgba(255, 102, 102, 0.671);
-}
-  
    /*폰트 넣을 class 추가*/         
-   li,.container,.main1{
+   li,.main1{
                 font-family:'Montserrat';
             }
             .menu:after{display:block; content:''; clear:both;}
@@ -208,46 +187,26 @@ input[type='radio']:disabled {
             .menu > li > a{display:block; padding:0 15px;  height:40px; line-height:40px; color:#fff;}
             .menu > li:hover .sub-menu {opacity:1; visibility:visible;}
             .sub-menu{visibility:visible; opacity:0; position:absolute; left:0; right:0; margin-left:15px;}
-           
 
-           </style>
-
-            <script>
-    
-    
-            function buttonClick() {
-                var ret = confirm("예약을 변경 하시겠습니까?");
-                if(ret==true) {
-                    alert('예약 변경이 완료되었습니다.')
-                    document.location.href="momodify.html";
-                }
-                else {
-                    
-                }
+            .navbar-brands{
+                margin-top: 6px;
             }
-
-            function show() {
-                document.getElementById("tbs").src="tables.png";
-            }
-            function hide() {
-                document.getElementById("tbs").src="";
-            }
-            </script>
-</head>
+            
+            </style>
 
 </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.png" alt="..." /></a>
+                <a class="navbar-brand" href="#page-top"><img src="assets/img/navbar-logo.png" style="width:120px" alt="..." /></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ms-1"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                         <li class="nav-item"><a class="nav-link" href="admin_index.jsp">Services</a></li>
+                    <ul class="menu navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.jsp">Services</a></li>
                         <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Confirm/Modify</a>
                             <ul class="sub-menu nav-item1">
@@ -256,7 +215,8 @@ input[type='radio']:disabled {
                                 <li><a href="cancle.jsp">Cancel</a></li>
                             </ul>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="admin_index.jsp">Log-out</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.jsp">Log-out</a></li>
+                        </a></li>
                     </ul>
                 </div>
             </div>
@@ -264,61 +224,20 @@ input[type='radio']:disabled {
     <!-- Contact-->
     <section class="page-section" id="contact">
         <div class="main">
-          
-            <div class="container">
-                <h6>이름</h6>
-                <input type="text" placeholder="성명" id="name" class="reser"
-					size="37" value="" name = "name" readonly/><br>
-				<h6>전화번호</h6>
-				<input type="tel" placeholder="전화번호" id="phoneN" class="reser"
-					size="37" value="" name = "phoneN" readonly/><br>
-               <h6>예약 날짜</h6>
-                <input class="reser" id="date" type="date" placeholder="Date *" data-sb-validations="required,email" value="" name = "date" />
-                <div class="container1">
-                    <h6>예약 인원</h6>
-					<select id="cover" name="covers"
-						onchange="selectBoxChange(this.value);">
-						<option value="none">선택</option>
-						<option value="2">2명</option>
-						<option value="3">3명</option>
-						<option value="4">4명</option>
-						<option value="5">5명</option>
-						<option value="6">6명</option>
-					</select>
-                </div>
-                <div class="container1">
-                  <h6>예약 시간</h6>
-              <select name="time" id="time" onchange="selectBoxChange2(this.value);" >
-                  <option value="none">선택</option>
-                  <option value="13:00:00">13:00</option>  
-                  <option value="13:30:00">13:30</option>
-                  <option value="14:00:00">14:00</option>
-                  <option value="14:30:00">14:30</option>
-                  <option value="15:00:00">15:00</option>
-                  <option value="15:30:00">15:00</option>  
-                  <option value="16:00:00">16:00</option>
-                  <option value="16:30:00">16:30</option>
-                  <option value="17:00:00">17:00</option>
-                  <option value="17:30:00">17:30</option>
-                  <option value="18:00:00">18:00</option>  
-                  <option value="18:30:00">18:30</option>
-                  <option value="19:00:00">19:00</option>
-                  <option value="19:30:00">19:30</option>
-                  <option value="20:30:00">20:00</option>
-                  <option value="20:30:00">20:30</option>
-                  <option value="21:00:00">21:00</option>
-                  <option value="21:30:00">21:30</option>
-                  <option value="22:00:00">22:00</option> 
-              </select>
-              </div>
+            <h2 class="logo">&nbsp;</h2>
+                <div class="container">
+                <h5>Table 배치</h5>
+                <img src="assets/img/tables.png">
             </div>
-            </div>
-        
- <div class="main1">
-          <h2 class="logo">&nbsp;</h2>
-          <div class="container">
-              <!--바꿈-->
-            <h5>Table 선택</h5>
+        </div>
+
+            
+
+       <div class="main1">
+			<h6 class="logo">&nbsp;</h6>
+			<div class="container">
+				<h5>Table 선택</h5>
+
 				<div class="card">
 					<input type="radio" name="re_table" value="1-/-/-2" id="re_table1"> <label
 						for="card1"><span></span>1번 테이블</label>
@@ -366,19 +285,19 @@ input[type='radio']:disabled {
 					</label><br>
 				</div>
 			</div>
-		
-			    <div id="con"> 
-    <div style="display:inline-block"><button class="btn-reser" id="submitButton" type="button" onclick="modifyReservation()">예약변경</button></div>
+   
+
+    <div id="con">
+    <div style="display:inline-block"><button class="btn-resers" id="submitButton" type="button" onclick="document.location.href='reservation.jsp'">이전</button></div> 
+    <div style="display:inline-block"><button class="btn-reser" id="submitButton" type="button" onclick="addReservation()">예약</button></div>
     </div>
-		</div>
 </section>  
 </body>
 
 <script>
 
-	$(document).ready(function (){
+ 	$(document).ready(function (){
 		
-		getData();
 		duplication();
 		
 	})
@@ -388,8 +307,6 @@ input[type='radio']:disabled {
 		let date = "<%=date%>";
 		let time = "<%=time%>";
 		let data = date + '-/-/-' + time;
-		
-		let table_number = '<%=table_number%>';
 		
 		$.ajax({
 			url : "ajax.do",
@@ -412,35 +329,35 @@ input[type='radio']:disabled {
 				let table9 = tableArr[8];
 				let table10 = tableArr[9];
 				
- 				if(table1 == 1 && table_number!=1){
+ 				if(table1 == 1){
  					$("input[id='re_table1']").attr('disabled',true);
 				} 
-				if(table2 == 2 && table_number!=2){
+				if(table2 == 2){
 					//$('input:radio[name=re_table]:input[value=2-/-/-2]').attr("disabled", true);
 					$("input[id='re_table2']").attr('disabled',true);
 				}
-				 if(table3 == 3 && table_number!=3){
+				 if(table3 == 3){
 					 $("input[id='re_table3']").attr('disabled',true);
 				}
-				if(table4 == 4 && table_number!=4){
+				if(table4 == 4){
 					$("input[id='re_table4']").attr('disabled',true);
 				}
-				if(table5 == 5 && table_number!=5){
+				if(table5 == 5){
 					$("input[id='re_table5']").attr('disabled',true);
 				}
-				if(table6 == 6 && table_number!=6){
+				if(table6 == 6){
 					$("input[id='re_table6']").attr('disabled',true);
 				}
-				if(table7 == 7 && table_number!=7){
+				if(table7 == 7){
 					$("input[id='re_table7']").attr('disabled',true);
 				}
-				if(table8 == 8 && table_number!=8){
+				if(table8 == 8){
 					$("input[id='re_table8']").attr('disabled',true);
 				}
-				if(table9 == 9 && table_number!=9){
+				if(table9 == 9){
 					$("input[id='re_table9']").attr('disabled',true);
 				}
-				if(table10 == 10 && table_number!=10){
+				if(table10 == 10){
 					$("input[id='re_table10']").attr('disabled',true);
 				}
 				
@@ -451,98 +368,57 @@ input[type='radio']:disabled {
 	} 
 	
 	
-	function getData(){
+	function addReservation() {
 		
-		let name = '<%=name%>';
-		let phoneN = '<%=phoneN%>';
-		let date = '<%=date%>';
-		let cover = '<%=cover%>';
-		let time = '<%=time%>';
-		let table_number = '<%=table_number%>';
-		
-		$('input[name=name]').attr('value',name);
-		$('input[name=phoneN]').attr('value',phoneN);
-		$('input[name=date]').attr('value',date);
-		$("#cover").val(cover);
-		$("#time").val(time);
-		$(":radio[name='re_table'][value='" + table_number + "']").attr('checked', true);
-
-	}
-	
-	
-	var selectBoxChange = function(value) {
-		$("#covers").val(value);
-	}
-	var selectBoxChange2 = function(value) {
-		$("#time").val(value);
-	}
-	
-	function modifyReservation() {
-		
+		//let table_NS = $('input[name="re_table"]:checked').val();
 		let table_NS = $('input[name="re_table"]:checked').val();
 		let table_ns = [];
 		table_ns = table_NS.split('-/-/-');
 		let table = table_ns[0];
 		let table_seats = table_ns[1];
+/* 		alert(table+"--"+table_seats); */
+			
+/* 		let table = $('input[name="re_table"]:checked').val();
+		let table_seats; */
+		let data = "<%=data%>";
+		data = data + "-/-/-" + table;
+		//alert(data);
 		
-		let pr_name = '<%=name%>';
-		let pr_phoneN = '<%=phoneN%>';
-		let pr_date = '<%=date%>';
-		let pr_cover = '<%=cover%>명';
-		let pr_time = '<%=time%>';
-		let pr_table_number = '<%=table_number%>번';
-		
-		let name = $('#name').val();
-		let phoneN = $('#phoneN').val();
-		let date = $('#date').val();
-		let cover = $('#cover').val();
-		let time = $('#time').val();
-		//let table = $('input[name="re_table"]:checked').val();
-		let data = pr_name + '-/-/-' + pr_phoneN + '-/-/-' + pr_date + '-/-/-' + pr_cover
-		+ '-/-/-' + pr_time + "-/-/-" + pr_table_number + '-/-/-' + name + '-/-/-' + phoneN + '-/-/-' + date + '-/-/-' + cover
-		+ '-/-/-' + time + "-/-/-" + table;
+		let cover = <%=cover%>;
 		
 		
-		if(cover > table_seats) {
-			alert(pr_cover+"은"+table+"번 테이블에 앉을 수 없습니다.");
+ 		if(cover > table_seats) {
+			alert(cover+"명은"+table+"번 테이블에 앉을 수 없습니다.");
 			location.reload();
 		}
 		else{
-			modifyReservation2(data);
-		}
-		//alert(data);
-		
-/* 		$.ajax({
-			url : "ajax.do",
-			type : "post",
-			data : {
-				req : "modifyReservation",
-				data : data
-			},
-			success : function(result) {
-				alert("예약이 수정되었습니다.");
-				location.href="index.jsp";
-			}
-		}) */
-		
-		
+			addReservation2(data);
+		} 	
 	}
 	
-	function modifyReservation2(data){
+	function addReservation2(data){
+		
 		$.ajax({
 			url : "ajax.do",
 			type : "post",
 			data : {
-				req : "modifyReservation",
+				req : "addReservation",
 				data : data
 			},
 			success : function(result) {
-				alert("예약이 수정되었습니다.");
-				location.href="admin_index.jsp";
+				//alert(result);
+//				location.href="confirm.jsp";
+				passData(data);
 			}
 		})
+		
+	}
+	
+	function passData(data){
+		location.href = "confirm.jsp?data="+data;
 	}
 	
 	
 </script>
+
 </html>

@@ -101,13 +101,12 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.jsp">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">About</a></li>
                         
                         <%
     					if (id == null) {
                         %>
 <!--                         <li class="nav-item"><a class="nav-link" href="reservation.jsp">Reservation</a></li> -->
-                        <li class="nav-item"><a class="nav-link" href="login.jsp">Log-in</a></li>
+                        <li class="nav-item"><a class="nav-link" href="signup.jsp">Sign-up</a></li>
                         
                         <%
 						} else {
